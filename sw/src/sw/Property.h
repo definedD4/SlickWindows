@@ -8,20 +8,23 @@ namespace sw {
 	public:
 		typedef T ValueType;
 	private:
-		T& m_Value;
+		T m_Value;
 	public:
-		Property();
-		Property(const T& value);
+		Property() {}
+		Property(const T& value) : m_Value(value) { }
 
-		T& get() const { return m_Value; }
+		T get() const { return m_Value; }
 		void set(const T& value) { m_Value = value; }
 
-		void operator = (const T& value);
-		operator T&() const { return get(); }
-		T& operator()() const { return get(); }
+		void operator = (const T& value) { m_Value = value; }
+		operator T() const { return get(); }
+		T operator()() const { return get(); }
 	};
 
 	template<typename T>
-	std::ostream& operator<<(std::ostream& stream, Property<T>& property);
+	std::ostream& operator<<(std::ostream& stream, Property<T>& property) {
+		stream << property();
+		return stream;
+	}
 
 }
