@@ -4,6 +4,14 @@ using namespace std;
 
 namespace sw {
 
+	Application* Application::s_Instance = nullptr;
+
+	void stopApplication() {
+		app()->stop();
+		delete Application::s_Instance;
+		destroyLogger();
+	}
+
 	Application::Application() {
 		initGL();
 
@@ -17,14 +25,12 @@ namespace sw {
 		glfwSetErrorCallback(errorCallback);
 
 		if (!glfwInit()) {
-			error("ERROR: glfwInit failed.");
+			fatalError("GLEW init error.");
 		}
 	}
 
 	void Application::errorCallback(int error, const char* description) {
-		std::cout << "ERROR: GLFW error #" << error << ": \"" << description << "\".\n";
-		system("pause");
-		exit(EXIT_FAILURE);
+		fatalError("ERROR: GLFW error #" + to_string(error) + ": \"" + description + "\".");
 	}
 
 	Application::~Application() {
@@ -57,10 +63,11 @@ namespace sw {
 		glfwTerminate();
 	}
 
-	void Application::error(string description) {
-		cout << "ERROR: " << description << endl;
-		system("pause");
+	void Application::fatalError(string description) {
+		logger()->logFatal(description);
+		pause();
 		exit(EXIT_FAILURE);
+		
 	}
 
 	void Application::run() {

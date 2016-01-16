@@ -7,7 +7,6 @@ using namespace graph;
 
 namespace sw {
 
-
 	Window::Window(Size size, std::string title) {
 		m_Size = size;
 		m_Title = title;
@@ -15,7 +14,7 @@ namespace sw {
 		m_Handle = glfwCreateWindow(m_Size.w, m_Size.h, m_Title.c_str(), NULL, NULL);
 
 		if (!m_Handle) {
-			std::cout << "Failed to open GLFW window.\n";
+			Application::fatalError("Failed to open GLFW window.");
 			glfwTerminate();
 			exit(EXIT_FAILURE);
 		}
@@ -34,9 +33,7 @@ namespace sw {
 
 		GLenum err = glewInit();
 		if (err != GLEW_OK) {
-			std::cout << "ERROR: glewInit failed: \"" << glewGetErrorString(err) << "\".\n";
-			system("pause");
-			exit(EXIT_FAILURE);
+			Application::fatalError("GLEW init failed: \"" + string((char*)glewGetErrorString(err)) + "\".");
 		}
 
 		glClear(GL_COLOR_BUFFER_BIT);

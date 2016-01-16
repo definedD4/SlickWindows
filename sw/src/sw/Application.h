@@ -8,19 +8,22 @@
 
 #include "Window.h"
 #include "Dispatcher.h"
+#include "Logger.h"
 
 namespace sw {
 
 	inline Application* app();
+	void stopApplication();
 
 	class Application {
+	private:
+		static Application* s_Instance;
 	public:
 		static Application* current() {
-			static Application* app;
-			if (!app) {
-				app = new Application();
+			if (!s_Instance) {
+				s_Instance = new Application();
 			}
-			return app;
+			return s_Instance;
 		}
 
 	private:
@@ -43,7 +46,7 @@ namespace sw {
 		void run();
 		void stop();
 
-		static void error(std::string description);
+		static void fatalError(std::string description);
 
 		Dispatcher* getDispatcher() const {
 			return m_Dispatcher;
@@ -59,6 +62,8 @@ namespace sw {
 		static void sizeCallback(GLFWwindow* window, int width, int height);
 		static void positionCallback(GLFWwindow* window, int xpos, int ypos);
 		static void refreshCallback(GLFWwindow* window);
+
+		friend void stopApplication();
 	};
 
 	inline Application* app() {

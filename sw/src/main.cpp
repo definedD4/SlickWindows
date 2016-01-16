@@ -9,10 +9,6 @@ using namespace std;
 
 using namespace sw;
 
-void pause() {
-	system("pause");
-}
-
 int main( void )
 {
 	app();
@@ -21,6 +17,6 @@ int main( void )
 
 	app()->run();
 
-	app()->stop();
+	stopApplication();
 	exit(EXIT_SUCCESS);
 };
