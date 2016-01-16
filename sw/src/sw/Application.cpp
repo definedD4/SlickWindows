@@ -53,6 +53,9 @@ namespace sw {
 	}
 
 	void Application::stop() {
+		if (!m_Running)
+			return;
+
 		m_Running = false;
 		glfwPostEmptyEvent();
 		if (m_Windows.size() > 0) {
@@ -60,7 +63,6 @@ namespace sw {
 				it->second->destroyWindow();
 			}
 		}
-		glfwTerminate();
 	}
 
 	void Application::fatalError(string description) {
@@ -73,8 +75,10 @@ namespace sw {
 	void Application::run() {
 		while (m_Running) {
 			glfwPollEvents();
-			m_Dispatcher->process(1);
+			if(m_Running)
+				m_Dispatcher->process(1);
 		}
+		glfwTerminate();
 	}
 
 	void Application::keyCallback(GLFWwindow* window,

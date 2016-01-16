@@ -73,8 +73,8 @@ namespace sw {
 
 	void Window::c_closeRequested() {
 		glfwSetWindowShouldClose(m_Handle, GL_TRUE);
-		app()->deleteWindow(this);
 		destroyWindow();
+		app()->deleteWindow(this);
 	}
 
 	void Window::c_sizeChanged(int width, int height) {
