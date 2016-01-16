@@ -1,7 +1,6 @@
 ﻿#pragma once
 
-#include <iostream>
-
+#include "Common.h"
 #include "Dispatcher.h"
 
 namespace sw {
@@ -12,8 +11,6 @@ namespace sw {
 		Awaiting,
 		Running
 	};
-
-	class Dispatcher;
 
 	class Task {
 	private:

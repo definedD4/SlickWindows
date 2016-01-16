@@ -1,101 +1,99 @@
 #include "Window.h"
 
+using namespace std;
+
+using namespace sw;
+using namespace graph;
+
 namespace sw {
-	namespace wnd {
 
-		Window::Window(Size size, std::string title){
-			m_Size = size;
-			m_Title = title;
 
-			m_Handle = glfwCreateWindow(m_Size.w, m_Size.h, m_Title.c_str(), NULL, NULL);
+	Window::Window(Size size, std::string title) {
+		m_Size = size;
+		m_Title = title;
 
-			if (!m_Handle)
-			{
-				std::cout << "Failed to open GLFW window.\n";
-				glfwTerminate();
-				exit(EXIT_FAILURE);
-			}
+		m_Handle = glfwCreateWindow(m_Size.w, m_Size.h, m_Title.c_str(), NULL, NULL);
 
-			app()->registerWindow(this);
-
-			glfwMakeContextCurrent(m_Handle);
-
-			glfwSetKeyCallback(m_Handle, Application::keyCallback);
-			glfwSetWindowCloseCallback(m_Handle, Application::closeCallback);
-			glfwSetWindowSizeCallback(m_Handle, Application::sizeCallback);
-			glfwSetWindowPosCallback(m_Handle, Application::positionCallback);
-			glfwSetWindowRefreshCallback(m_Handle, Application::refreshCallback);
-
-			m_Buffer = new Bitmap(m_Size);
-
-			GLenum err = glewInit();
-			if (err != GLEW_OK)
-			{
-				std::cout << "ERROR: glewInit failed: \"" << glewGetErrorString(err) << "\".\n";
-				system("pause");
-				exit(EXIT_FAILURE);
-			}
-
-			glClear(GL_COLOR_BUFFER_BIT);
+		if (!m_Handle) {
+			std::cout << "Failed to open GLFW window.\n";
+			glfwTerminate();
+			exit(EXIT_FAILURE);
 		}
 
+		app()->registerWindow(this);
 
-		Window::~Window(){
-			destroyWindow();
+		glfwMakeContextCurrent(m_Handle);
+
+		glfwSetKeyCallback(m_Handle, Application::keyCallback);
+		glfwSetWindowCloseCallback(m_Handle, Application::closeCallback);
+		glfwSetWindowSizeCallback(m_Handle, Application::sizeCallback);
+		glfwSetWindowPosCallback(m_Handle, Application::positionCallback);
+		glfwSetWindowRefreshCallback(m_Handle, Application::refreshCallback);
+
+		m_Buffer = new Bitmap(m_Size);
+
+		GLenum err = glewInit();
+		if (err != GLEW_OK) {
+			std::cout << "ERROR: glewInit failed: \"" << glewGetErrorString(err) << "\".\n";
+			system("pause");
+			exit(EXIT_FAILURE);
 		}
 
-		void Window::destroyWindow() {
-			glfwDestroyWindow(m_Handle);
-		}
+		glClear(GL_COLOR_BUFFER_BIT);
+	}
 
-		bool Window::windowShoudClose() const {
-			return glfwWindowShouldClose(m_Handle) == GL_TRUE;
-		}
 
-		void Window::closeWindow() {
-			glfwSetWindowShouldClose(m_Handle, GL_TRUE);
-		}
+	Window::~Window() {
+		destroyWindow();
+	}
 
-		void Window::redraw() {
-			glfwMakeContextCurrent(m_Handle);
-			glRasterPos2i(-1, -1);
+	void Window::destroyWindow() {
+		glfwDestroyWindow(m_Handle);
+	}
 
-			Size sz = m_Buffer->getSize();
-			glDrawPixels(sz.w, sz.h, GL_RGBA, GL_UNSIGNED_BYTE, m_Buffer->getPixels());
+	bool Window::windowShoudClose() const {
+		return glfwWindowShouldClose(m_Handle) == GL_TRUE;
+	}
 
-			glfwSwapBuffers(m_Handle);
-		}
+	void Window::closeWindow() {
+		glfwSetWindowShouldClose(m_Handle, GL_TRUE);
+	}
 
-		void Window::c_keyPressed(int key, int scancode, int action, int mods) {
-			if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-				closeWindow();
-		}
+	void Window::redraw() {
+		glfwMakeContextCurrent(m_Handle);
+		glRasterPos2i(-1, -1);
 
-		void Window::c_closeRequested() {
-			glfwSetWindowShouldClose(m_Handle, GL_TRUE);
-			app()->deleteWindow(this);
-			destroyWindow();
-		}
+		Size sz = m_Buffer->getSize();
+		glDrawPixels(sz.w, sz.h, GL_RGBA, GL_UNSIGNED_BYTE, m_Buffer->getPixels());
 
-		void Window::c_sizeChanged(int width, int height) {
-			m_Size.w = width;
-			m_Size.h = height;
+		glfwSwapBuffers(m_Handle);
+	}
 
-			delete m_Buffer;
-			m_Buffer = new Bitmap(m_Size);
+	void Window::c_keyPressed(int key, int scancode, int action, int mods) {
+		if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+			closeWindow();
+	}
 
-			redraw();
+	void Window::c_closeRequested() {
+		glfwSetWindowShouldClose(m_Handle, GL_TRUE);
+		app()->deleteWindow(this);
+		destroyWindow();
+	}
 
-			setTitle("My window: " + std::to_string(m_Size.w)
-				+ "x" + std::to_string(m_Size.h));
-		}
+	void Window::c_sizeChanged(int width, int height) {
+		m_Size.w = width;
+		m_Size.h = height;
 
-		void Window::c_positionChanged(int xpos, int ypos) {
-			
-		}
+		delete m_Buffer;
+		m_Buffer = new Bitmap(m_Size);
 
-		void Window::c_refresh() {
-			redraw();
-		}
+		redraw();
+	}
+
+	void Window::c_positionChanged(int xpos, int ypos) { }
+
+	void Window::c_refresh() {
+		redraw();
 	}
 }
+

@@ -6,8 +6,8 @@
 #include "sw\Window.h"
 
 using namespace std;
+
 using namespace sw;
-using namespace wnd;
 
 void pause() {
 	system("pause");

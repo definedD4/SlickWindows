@@ -2,8 +2,8 @@
 
 #include <queue>
 
-#include "Task.h"
 #include "Common.h"
+#include "Task.h"
 
 namespace sw {
 
