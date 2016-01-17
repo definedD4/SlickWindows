@@ -149,6 +149,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\sw\controls\LayoutControl.cpp" />
+    <ClCompile Include="src\sw\controls\RootControl.cpp" />
     <ClCompile Include="src\sw\Logger.cpp" />
     <ClCompile Include="src\sw\Dispatcher.cpp" />
     <ClCompile Include="src\sw\Property.cpp" />
@@ -159,8 +161,11 @@
     <ClCompile Include="src\sw\util\Rect.h" />
     <ClCompile Include="src\sw\Win32.cpp" />
     <ClCompile Include="src\sw\Window.cpp" />
+    <ClCompile Include="src\sw\controls\VisualControl.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\sw\controls\LayoutControl.h" />
+    <ClInclude Include="src\sw\controls\RootControl.h" />
     <ClInclude Include="src\sw\Logger.h" />
     <ClInclude Include="src\sw\Dispatcher.h" />
     <ClInclude Include="src\sw\Property.h" />
@@ -174,6 +179,7 @@
     <ClInclude Include="src\sw\util\Point.h" />
     <ClInclude Include="src\sw\Win32.h" />
     <ClInclude Include="src\sw\Window.h" />
+    <ClInclude Include="src\sw\controls\VisualControl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

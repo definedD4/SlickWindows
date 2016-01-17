@@ -4,10 +4,11 @@ using namespace std;
 
 using namespace sw;
 using namespace graph;
+using namespace controls;
 
 namespace sw {
 
-	Window::Window(Size size, std::string title) {
+	Window::Window(util::Size size, std::string title) {
 		m_Size = size;
 		m_Title = title;
 
@@ -37,6 +38,8 @@ namespace sw {
 		}
 
 		glClear(GL_COLOR_BUFFER_BIT);
+
+		m_Root = new RootControl(this);
 	}
 
 
@@ -60,11 +63,17 @@ namespace sw {
 		glfwMakeContextCurrent(m_Handle);
 		glRasterPos2i(-1, -1);
 
-		Size sz = m_Buffer->getSize();
+		util::Size sz = m_Buffer->getSize(); 
 		glDrawPixels(sz.w, sz.h, GL_RGBA, GL_UNSIGNED_BYTE, m_Buffer->getPixels());
 
 		glfwSwapBuffers(m_Handle);
 	}
+
+	void Window::setChild(controls::LayoutControl* child) {
+		WARN(!child, "Setting window child control to 0.")
+		m_Root->setChild(child);
+	}
+
 
 	void Window::c_keyPressed(int key, int scancode, int action, int mods) {
 		if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)

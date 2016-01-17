@@ -10,6 +10,7 @@
 #include "Application.h"
 #include "util/Size.h"
 #include "graph/Bitmap.h"
+#include "controls/RootControl.h"
 
 namespace sw {
 
@@ -17,24 +18,26 @@ namespace sw {
 	private:
 		GLFWwindow* m_Handle;
 
-		Size m_Size;
+		util::Size m_Size;
 		std::string m_Title;
 
 		graph::Bitmap* m_Buffer;
 
+		controls::RootControl* m_Root;
+
 	public:
-		Window(Size size, std::string title);
+		Window(util::Size size, std::string title);
 		~Window();
 
 		GLFWwindow* getHandle() const {
 			return m_Handle;
 		}
 
-		Size getSize() const {
+		util::Size getSize() const {
 			return m_Size;
 		}
 
-		void setSize(Size size) {
+		void setSize(util::Size size) {
 			m_Size = size;
 			glfwSetWindowSize(m_Handle, m_Size.w, m_Size.h);
 		}
@@ -56,6 +59,8 @@ namespace sw {
 		bool windowShoudClose() const;
 		void closeWindow();
 		void redraw();
+
+		void setChild(controls::LayoutControl* child);
 
 		void c_keyPressed(int key, int scancode, int action, int mods);
 		void c_closeRequested();

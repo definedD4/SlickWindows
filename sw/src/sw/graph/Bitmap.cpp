@@ -4,10 +4,12 @@
 #include "../util/color.h"
 #include "../util/math.h"
 
+using namespace sw::util;
+
 namespace sw {
 	namespace graph {
 
-		Bitmap::Bitmap(Size& size) {
+		Bitmap::Bitmap(Size size) {
 			m_Size = size;
 			m_BytesPerPixel = BITMAP_BYTES_PER_PIXEL;
 			m_Stride = m_Size.w * m_BytesPerPixel;
@@ -21,6 +23,34 @@ namespace sw {
 
 		Bitmap::~Bitmap() {
 			delete[] m_Pixels;
+		}
+
+		void Bitmap::drawImage(Point p, Bitmap* src) {
+			byte* srcPixels = src->getPixels();
+			Size srcSize = src->getSize();
+
+			int ys = p.y;
+			int ye = min(p.y + srcSize.h, m_Size.h);
+			int src_ind = 0;
+			for (int y = ys; y < ye; y++) {
+				int xs = p.x;
+				int xe = min(p.x + srcSize.w, m_Size.w);
+				int ind = y * m_Stride + xs * 4;
+				int inde = y * m_Stride + xe * 4;
+				while(ind < inde) {
+					m_Pixels[ind++] = srcPixels[src_ind++];
+				}
+			}
+		}
+
+		void Bitmap::clear(Color c) {
+			int ind = 0;
+			while(ind < m_Length) {
+				m_Pixels[ind++] = c.r;
+				m_Pixels[ind++] = c.g;
+				m_Pixels[ind++] = c.b;
+				m_Pixels[ind++] = c.a;
+			}
 		}
 
 		void Bitmap::fillRect(Rect r, Color c) {
