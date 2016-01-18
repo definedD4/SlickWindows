@@ -45,10 +45,7 @@
     <ClCompile Include="src\sw\Win32.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sw\controls\LayoutControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sw\controls\VisualControl.cpp">
+    <ClCompile Include="src\sw\controls\ControlBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\sw\controls\RootControl.cpp">
@@ -95,10 +92,7 @@
     <ClInclude Include="src\sw\Win32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sw\controls\LayoutControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\controls\VisualControl.h">
+    <ClInclude Include="src\sw\controls\ControlBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sw\controls\RootControl.h">

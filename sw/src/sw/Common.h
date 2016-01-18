@@ -30,9 +30,7 @@ namespace sw {
 		class Bitmap;
 	}
 	namespace controls {
-		class LayoutControl;
-		class RootControl;
-		class VisualControl;
+		class ControlBase;
 	}
 
 }
