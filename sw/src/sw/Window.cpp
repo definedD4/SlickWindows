@@ -38,13 +38,16 @@ namespace sw {
 		}
 
 		glClear(GL_COLOR_BUFFER_BIT);
-
-		m_Root = new RootControl(this);
 	}
 
 
 	Window::~Window() {
 		destroyWindow();
+	}
+
+	void Window::setContent(controls::ControlBase* content) {
+		WARN(!content, "Setting window content to 0.")
+		m_Root = new RootControl(this, content);
 	}
 
 	void Window::destroyWindow() {
@@ -68,12 +71,6 @@ namespace sw {
 
 		glfwSwapBuffers(m_Handle);
 	}
-
-	void Window::setChild(controls::LayoutControl* child) {
-		WARN(!child, "Setting window child control to 0.")
-		m_Root->setChild(child);
-	}
-
 
 	void Window::c_keyPressed(int key, int scancode, int action, int mods) {
 		if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)

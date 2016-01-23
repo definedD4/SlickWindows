@@ -55,12 +55,12 @@ namespace sw {
 			return m_Buffer;
 		}
 
+		void setContent(controls::ControlBase* content);
+
 		void destroyWindow();
 		bool windowShoudClose() const;
 		void closeWindow();
 		void redraw();
-
-		void setChild(controls::LayoutControl* child);
 
 		void c_keyPressed(int key, int scancode, int action, int mods);
 		void c_closeRequested();

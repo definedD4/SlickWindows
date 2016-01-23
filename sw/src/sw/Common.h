@@ -31,6 +31,7 @@ namespace sw {
 	}
 	namespace controls {
 		class ControlBase;
+		class RootControl;
 	}
 
 }

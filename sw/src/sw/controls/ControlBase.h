@@ -18,6 +18,8 @@ namespace sw { namespace controls {
 		void setPosition(util::Point position) { m_Position = position; }
 		void setSize(util::Size size) { m_Size = size; }
 
+		graph::Bitmap* getRenderBuffer() const { return m_RenderBuffer; }
+
 	public:
 		ControlBase(ControlBase* parrent, util::Point position, util::Size size);
 		virtual ~ControlBase();
