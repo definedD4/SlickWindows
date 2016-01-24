@@ -60,6 +60,7 @@ namespace sw {
 		void destroyWindow();
 		bool windowShoudClose() const;
 		void closeWindow();
+		void render();
 		void redraw();
 
 		void c_keyPressed(int key, int scancode, int action, int mods);

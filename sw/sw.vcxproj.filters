@@ -51,6 +51,9 @@
     <ClCompile Include="src\sw\controls\RootControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\sw\controls\Control.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sw\graph\Bitmap.h">
@@ -96,6 +99,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sw\controls\RootControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\controls\Control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

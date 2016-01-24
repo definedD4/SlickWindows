@@ -4,6 +4,8 @@
 #include <iostream>
 
 #include "sw\Window.h"
+#include "sw/controls/Control.h"
+#include "sw/controls/ControlBase.h"
 
 using namespace std;
 
@@ -16,7 +18,10 @@ int main( void )
 {
 	app();
 
-	Window* window = new Window(Size(640, 520), "Window 1");
+	Window* window = new Window(Size(640, 520), "My Window");
+	Control* control = new Control(nullptr, Point(50, 50), Size(200, 100));
+	control->Background = Colors::red;
+	window->setContent((ControlBase*)control);
 	window->redraw();
 
 	app()->run();

@@ -12,9 +12,11 @@ namespace sw { namespace controls {
 
 	public:
 		RootControl(Window* owner, ControlBase* child);
+		~RootControl();
 		
 		void render() override;
 		void resize() override;
+		void redraw() override;
 	};
 
 } }

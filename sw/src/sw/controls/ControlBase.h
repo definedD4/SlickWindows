@@ -14,10 +14,13 @@ namespace sw { namespace controls {
 
 		graph::Bitmap* m_RenderBuffer;
 
+		void setParrent(ControlBase* parrent) { m_Parrent = parrent; }
+
 	protected:
 		void setPosition(util::Point position) { m_Position = position; }
 		void setSize(util::Size size) { m_Size = size; }
 
+		ControlBase* getParrent() const { return m_Parrent; }
 		graph::Bitmap* getRenderBuffer() const { return m_RenderBuffer; }
 
 	public:
@@ -31,6 +34,9 @@ namespace sw { namespace controls {
 
 		virtual void render() = 0;
 		virtual void resize() = 0;
+		virtual void redraw() = 0;
+
+		friend class RootControl;
 	};
 
 }}

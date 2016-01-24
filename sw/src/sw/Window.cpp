@@ -62,7 +62,7 @@ namespace sw {
 		glfwSetWindowShouldClose(m_Handle, GL_TRUE);
 	}
 
-	void Window::redraw() {
+	void Window::render() {
 		glfwMakeContextCurrent(m_Handle);
 		glRasterPos2i(-1, -1);
 
@@ -70,6 +70,10 @@ namespace sw {
 		glDrawPixels(sz.w, sz.h, GL_RGBA, GL_UNSIGNED_BYTE, m_Buffer->getPixels());
 
 		glfwSwapBuffers(m_Handle);
+	}
+
+	void Window::redraw() {
+		m_Root->redraw();
 	}
 
 	void Window::c_keyPressed(int key, int scancode, int action, int mods) {
@@ -90,13 +94,13 @@ namespace sw {
 		delete m_Buffer;
 		m_Buffer = new Bitmap(m_Size);
 
-		redraw();
+		m_Root->resize();
 	}
 
 	void Window::c_positionChanged(int xpos, int ypos) { }
 
 	void Window::c_refresh() {
-		redraw();
+		render();
 	}
 }
 
