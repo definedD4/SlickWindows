@@ -65,7 +65,7 @@ namespace sw {
 		}
 	}
 
-	void Application::fatalError(string description) {
+	void Application::fatalError(const string& description) {
 		logger()->logFatal(description);
 		pause();
 		exit(EXIT_FAILURE);

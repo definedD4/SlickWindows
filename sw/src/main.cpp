@@ -32,4 +32,5 @@ int main( void )
 
 int WinMain() {
 	main();
+	return 0;
 }

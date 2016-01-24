@@ -16,9 +16,7 @@ namespace sw {
 			m_Length = m_Stride * m_Size.h;
 
 			m_Pixels = new byte[m_Length];
-			for (int i = 0; i < m_Length; i++) {
-				m_Pixels[i] = 255;
-			}
+			memset(m_Pixels, 255, m_Length);
 		}
 
 		Bitmap::~Bitmap() {
@@ -53,7 +51,7 @@ namespace sw {
 			}
 		}
 
-		void Bitmap::fillRect(Rect r, Color c) {
+		void Bitmap::fillRect(const Rect& r, Color c) {
 			int y1 = max(r.getY1(), 0);
 			if (y1 > m_Size.h) return;
 

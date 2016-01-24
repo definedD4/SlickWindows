@@ -46,7 +46,7 @@ namespace sw {
 		void run();
 		void stop();
 
-		static void fatalError(std::string description);
+		static void fatalError(const std::string& description);
 
 		Dispatcher* getDispatcher() const {
 			return m_Dispatcher;

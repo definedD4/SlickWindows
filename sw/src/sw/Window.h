@@ -46,7 +46,7 @@ namespace sw {
 			return m_Title;
 		}
 
-		void setTitle(std::string title) {
+		void setTitle(const std::string& title) {
 			m_Title = title;
 			glfwSetWindowTitle(m_Handle, m_Title.c_str());
 		}

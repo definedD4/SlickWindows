@@ -19,7 +19,7 @@ namespace sw {
 			m_State = TaskState::Running;
 			this->run();
 			m_State = TaskState::NotScheduled;
-			for (auto it = m_AwaitingThis.begin(); it != m_Awaiting.end(); it++) {
+			for (auto it = m_AwaitingThis.begin(); it != m_AwaitingThis.end(); ++it) {
 				(*it)->finishAwaiting(this);
 			}
 		}

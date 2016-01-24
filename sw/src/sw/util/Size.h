@@ -21,7 +21,7 @@ namespace sw { namespace util {
 		}
 
 		int getHeight() const {
-			return w;
+			return h;
 		}
 	};
 

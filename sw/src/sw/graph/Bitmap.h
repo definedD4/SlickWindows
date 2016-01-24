@@ -30,7 +30,7 @@ namespace sw {
 			void drawImage(util::Point p, Bitmap* src);
 			void clear(util::Color c);
 
-			void fillRect(util::Rect r, util::Color c);
+			void fillRect(const util::Rect& r, util::Color c);
 			void drawRect(util::Rect r, util::Color c, int thickness);
 			void fillDrawRect(util::Rect r, util::Color backgroung, util::Color border, int thickness);
 		};
