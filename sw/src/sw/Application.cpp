@@ -75,8 +75,13 @@ namespace sw {
 	void Application::run() {
 		while (m_Running) {
 			glfwPollEvents();
-			if(m_Running)
-				m_Dispatcher->process(1);
+			if (m_Running) {
+				if (m_Dispatcher->tasksScheduled() > 0) {
+					m_Dispatcher->process(1);
+				} else {
+					glfwWaitEvents();
+				}
+			}
 		}
 		glfwTerminate();
 	}

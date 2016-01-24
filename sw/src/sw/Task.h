@@ -19,6 +19,12 @@ namespace sw {
 		TaskState m_State = TaskState::NotScheduled;
 		Dispatcher* m_Dispatcher = nullptr;
 
+		std::vector<Task*> m_AwaitingThis;
+		std::vector<Task*> m_Awaiting;
+
+		void addAwaitable(Task* task);
+		void finishAwaiting(Task* task);
+
 	protected:
 		void setPriority(int value) { m_Priority = value; }
 		void execute();
@@ -32,6 +38,8 @@ namespace sw {
 
 		void schedule(Dispatcher* dispatcher);
 		virtual void run() = 0;
+
+		void awaitFor(Task* task);
 
 		friend class Dispatcher;
 	};

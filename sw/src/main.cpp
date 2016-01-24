@@ -28,4 +28,8 @@ int main( void )
 
 	stopApplication();
 	exit(EXIT_SUCCESS);
-};
+}
+
+int WinMain() {
+	main();
+}
