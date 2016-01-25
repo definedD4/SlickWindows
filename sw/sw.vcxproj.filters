@@ -104,5 +104,11 @@
     <ClInclude Include="src\sw\controls\Control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\sw\util\Thickness.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\controls\ContainerControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,34 +1,36 @@
 #pragma once
 
-#include "../Common.h"
+#include "ContainerControl.h"
 #include "../graph/Bitmap.h"
 
 namespace sw { namespace controls {
 
+	class ContainerControl;
+
 	class ControlBase {
 	private:
-		ControlBase* m_Parrent;
+		ContainerControl* m_Parrent;
 
 		util::Point m_Position;
 		util::Size m_Size;
 
 		graph::Bitmap* m_RenderBuffer;
 
-		void setParrent(ControlBase* parrent) { m_Parrent = parrent; }
+		void setParrent(ContainerControl* parrent) { m_Parrent = parrent; }
 
 	protected:
 		void setPosition(util::Point position) { m_Position = position; }
 		void setSize(util::Size size) { m_Size = size; }
 
-		ControlBase* getParrent() const { return m_Parrent; }
+		ContainerControl* getParrent() const { return m_Parrent; }
 		graph::Bitmap* getRenderBuffer() const { return m_RenderBuffer; }
 
 	public:
-		ControlBase(ControlBase* parrent, util::Point position, util::Size size);
+		ControlBase(ContainerControl* parrent, util::Point position, util::Size size);
 		virtual ~ControlBase();
 
 		util::Point getPosition() const { return m_Position; }
-		util::Size getSize() const { return m_Size; }
+		const util::Size& getSize() const { return m_Size; }
 
 		void drawOn(graph::Bitmap* dest) const;
 

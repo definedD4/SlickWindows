@@ -113,7 +113,7 @@
       <AdditionalDependencies>opengl32.lib;glu32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies/GLFW/lib;$(SolutionDir)Dependencies/GLEW/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/NODEFAULTLIB:MSVCRT %(AdditionalOptions)</AdditionalOptions>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EntryPointSymbol>
       </EntryPointSymbol>
     </Link>
@@ -155,7 +155,7 @@
       <AdditionalDependencies>opengl32.lib;glu32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies/GLFW/lib;$(SolutionDir)Dependencies/GLEW/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/NODEFAULTLIB:MSVCRT %(AdditionalOptions)</AdditionalOptions>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EntryPointSymbol>
       </EntryPointSymbol>
     </Link>
@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sw\controls\Control.h" />
+    <ClInclude Include="src\sw\controls\ContainerControl.h" />
     <ClInclude Include="src\sw\controls\RootControl.h" />
     <ClInclude Include="src\sw\Logger.h" />
     <ClInclude Include="src\sw\Dispatcher.h" />
@@ -189,6 +190,7 @@
     <ClInclude Include="src\sw\util\Size.h" />
     <ClInclude Include="src\sw\Common.h" />
     <ClInclude Include="src\sw\util\Point.h" />
+    <ClInclude Include="src\sw\util\Thickness.h" />
     <ClInclude Include="src\sw\Win32.h" />
     <ClInclude Include="src\sw\Window.h" />
     <ClInclude Include="src\sw\controls\ControlBase.h" />

@@ -7,10 +7,12 @@
 #define uint unsigned int
 
 #ifdef _DEBUG
-	#define ASSERT(x, y) if(!(x)) { Application::fatalError(y); }
+	#define ASSERT(x) if(!(x)) { Application::fatalError("Assertation failed"); }
+	#define ASSERT_MSG(x, y) if(!(x)) { Application::fatalError(y); }
 	#define WARN(x, y) if(x) { logger()->logWarning(y); }
 #else
-	#define ASSERT(x, y)
+	#define ASSERT(x)
+	#define ASSERT_MSG(x, y)
 	#define WARN(x, y)
 #endif
 
@@ -30,7 +32,8 @@ namespace sw {
 		class Bitmap;
 	}
 	namespace controls {
-		class ControlBase;
+		//class ControlBase;
+		class ContainerControl;
 		class RootControl;
 	}
 

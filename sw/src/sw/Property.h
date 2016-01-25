@@ -11,10 +11,10 @@ namespace sw {
 		T m_Value;
 	public:
 		Property() {}
-		Property(const T value) : m_Value(value) { }
+		Property(T value) : m_Value(value) { }
 
 		T get() const { return m_Value; }
-		void set(const T value) { m_Value = value; }
+		void set(T value) { m_Value = value; }
 
 		void operator = (T value) { m_Value = value; }
 		operator T() const { return get(); }

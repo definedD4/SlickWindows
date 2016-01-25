@@ -6,7 +6,7 @@ using namespace sw::graph;
 namespace sw { namespace controls {
 
 
-	ControlBase::ControlBase(ControlBase* parrent, util::Point position, util::Size size)
+	ControlBase::ControlBase(ContainerControl* parrent, util::Point position, util::Size size)
 		: m_Parrent(parrent), m_Position(position), m_Size(size) {
 		m_RenderBuffer = new Bitmap(m_Size);
 	}

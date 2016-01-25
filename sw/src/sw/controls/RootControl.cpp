@@ -30,5 +30,10 @@ namespace sw { namespace controls {
 	void RootControl::redraw() {
 		m_Child->redraw();
 	}
+
+	util::Size RootControl::getContainerArea(ControlBase* control) {
+		ASSERT(m_Child == control)
+		return getSize();
+	}
 }}
 
