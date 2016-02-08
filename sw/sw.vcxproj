@@ -161,9 +161,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\sw\controls\Control.cpp" />
-    <ClCompile Include="src\sw\controls\ControlBase.cpp" />
-    <ClCompile Include="src\sw\controls\RootControl.cpp" />
+    <ClCompile Include="src\sw\ctrl\ContainerControl.cpp" />
+    <ClCompile Include="src\sw\ctrl\ControlBase.cpp" />
+    <ClCompile Include="src\sw\ctrl\VisualControl.cpp" />
     <ClCompile Include="src\sw\Logger.cpp" />
     <ClCompile Include="src\sw\Dispatcher.cpp" />
     <ClCompile Include="src\sw\Property.cpp" />
@@ -176,9 +176,9 @@
     <ClCompile Include="src\sw\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\sw\controls\Control.h" />
-    <ClInclude Include="src\sw\controls\ContainerControl.h" />
-    <ClInclude Include="src\sw\controls\RootControl.h" />
+    <ClInclude Include="src\sw\ctrl\ContainerControl.h" />
+    <ClInclude Include="src\sw\ctrl\ControlBase.h" />
+    <ClInclude Include="src\sw\ctrl\VisualControl.h" />
     <ClInclude Include="src\sw\Logger.h" />
     <ClInclude Include="src\sw\Dispatcher.h" />
     <ClInclude Include="src\sw\Property.h" />
@@ -193,7 +193,6 @@
     <ClInclude Include="src\sw\util\Thickness.h" />
     <ClInclude Include="src\sw\Win32.h" />
     <ClInclude Include="src\sw\Window.h" />
-    <ClInclude Include="src\sw\controls\ControlBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

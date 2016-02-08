@@ -45,13 +45,13 @@
     <ClCompile Include="src\sw\Win32.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sw\controls\ControlBase.cpp">
+    <ClCompile Include="src\sw\ctrl\ControlBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sw\controls\RootControl.cpp">
+    <ClCompile Include="src\sw\ctrl\ContainerControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sw\controls\Control.cpp">
+    <ClCompile Include="src\sw\ctrl\VisualControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -95,19 +95,16 @@
     <ClInclude Include="src\sw\Win32.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sw\controls\ControlBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\controls\RootControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\controls\Control.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\sw\util\Thickness.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sw\controls\ContainerControl.h">
+    <ClInclude Include="src\sw\ctrl\ControlBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\ctrl\ContainerControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\ctrl\VisualControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
