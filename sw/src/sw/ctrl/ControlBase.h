@@ -19,6 +19,8 @@ namespace sw { namespace ctrl {
 		bool m_RedrawRequested = false;
 
 	protected:
+		ContainerControl* getParrent() const { return m_Parrent; }
+
 		bool isRenderRequested() const {
 			return m_RenderRequested;
 		}
@@ -28,6 +30,14 @@ namespace sw { namespace ctrl {
 
 		util::Point getPosition() const {
 			return m_Position;
+		}
+
+		void setPosition(util::Point position) {
+			m_Position = position;
+		}
+
+		void setSize(util::Size size) {
+			m_Size = size;
 		}
 
 	public:

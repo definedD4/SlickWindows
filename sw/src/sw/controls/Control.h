@@ -11,7 +11,7 @@ namespace sw { namespace controls {
 		Control(ContainerControl* parrent,
 		        const sw::util::Point& position, const sw::util::Size& size);
 
-		Property<util::Thikness> Margin;
+		Property<util::Thickness> Margin;
 		Property<util::Color> Background;
 
 		void render() override;
