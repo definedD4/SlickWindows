@@ -12,7 +12,9 @@
 
 namespace sw {
 
-	inline Application* app();
+	class Application;
+
+	Application* app();
 	void stopApplication();
 
 	class Application {
@@ -66,7 +68,7 @@ namespace sw {
 		friend void stopApplication();
 	};
 
-	inline Application* app() {
+	Application* app() {
 		return Application::current();
 	}
 

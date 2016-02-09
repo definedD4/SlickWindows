@@ -17,6 +17,5 @@ namespace sw { namespace ctrl {
 
 	void VisualControl::redraw() {
 		render();
-		ControlBase::redraw();
 	}
 } }

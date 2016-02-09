@@ -4,7 +4,7 @@ using namespace std;
 
 using namespace sw;
 using namespace graph;
-using namespace controls;
+using namespace ctrl;
 
 namespace sw {
 
@@ -45,9 +45,10 @@ namespace sw {
 		destroyWindow();
 	}
 
-	void Window::setContent(controls::ControlBase* content) {
+	void Window::setContent(ctrl::ControlBase* content) {
 		WARN(!content, "Setting window content to 0.")
-		m_Root = new RootControl(this, content);
+		m_Root = new RootControl(this);
+		m_Root->setContent(content);
 	}
 
 	void Window::destroyWindow() {

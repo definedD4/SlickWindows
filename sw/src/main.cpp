@@ -3,27 +3,28 @@
 
 #include <iostream>
 
-#include "sw/controls/ContainerControl.h"
-#include "sw/controls/ControlBase.h"
-#include "sw/controls/Control.h"
-#include "sw\Window.h"
+#include "sw/Window.h"
+
+#include "sw/ctrl/Test_Rect.h"
 
 using namespace std;
 
 using namespace sw;
 using namespace util;
 using namespace graph;
-using namespace controls;
+using namespace ctrl;
 
 int main( void )
 {
 	app();
 
 	Window* window = new Window(Size(640, 520), "My Window");
-	Control* control = new Control(nullptr, Point(50, 50), Size(200, 100));
-	control->Background = Colors::red;
-	control->Margin = Thickness(20, 20, 20, 20);
-	window->setContent(static_cast<ControlBase*>(control));
+
+	Test_Rect* rect = new Test_Rect();
+	rect->Margin = Thickness(10, 5, 10, 5);
+	rect->Fill = Colors::red;
+	window->setContent(rect);
+
 	window->redraw();
 
 	app()->run();

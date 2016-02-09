@@ -10,7 +10,6 @@
 #include "Application.h"
 #include "util/Size.h"
 #include "graph/Bitmap.h"
-#include "controls/RootControl.h"
 
 namespace sw {
 
@@ -23,7 +22,7 @@ namespace sw {
 
 		graph::Bitmap* m_Buffer;
 
-		controls::RootControl* m_Root;
+		ctrl::RootControl* m_Root;
 
 	public:
 		Window(util::Size size, std::string title);
@@ -55,7 +54,7 @@ namespace sw {
 			return m_Buffer;
 		}
 
-		void setContent(controls::ControlBase* content);
+		void setContent(ctrl::ControlBase* content);
 
 		void destroyWindow();
 		bool windowShoudClose() const;
@@ -73,3 +72,4 @@ namespace sw {
 
 }
 
+#include "ctrl/RootControl.h"

@@ -8,7 +8,6 @@
 
 namespace sw {
 
-	Logger* logger();
 	void destroyLogger();
 
 	enum class LogLevel {
@@ -42,7 +41,9 @@ namespace sw {
 		friend void destroyLogger();
 	};
 
-	inline Logger* logger() { return Logger::current(); }
+	Logger* logger();
+
+	Logger* logger() { return Logger::current(); }
 
 
 }

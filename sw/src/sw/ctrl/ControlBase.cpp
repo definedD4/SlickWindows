@@ -7,11 +7,6 @@ namespace sw { namespace ctrl {
 	ControlBase::~ControlBase() {}
 
 	void ControlBase::render() {
-		m_RenderRequested = false;
-	}
-
-	void ControlBase::redraw() {
-		m_RedrawRequested = false;
-		m_RenderRequested = false;
+		m_Parrent->render();
 	}
 } }

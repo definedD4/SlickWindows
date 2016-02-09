@@ -16,7 +16,7 @@ namespace sw {
 			m_Length = m_Stride * m_Size.h;
 
 			m_Pixels = new byte[m_Length];
-			memset(m_Pixels, 255, m_Length);
+			//memset(m_Pixels, 255, m_Length);
 		}
 
 		Bitmap::~Bitmap() {
