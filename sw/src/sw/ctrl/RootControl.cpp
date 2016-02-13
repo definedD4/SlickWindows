@@ -37,6 +37,7 @@ namespace sw {
 
 		void RootControl::resize() {
 			setSize(m_Owner->getSize());
+			m_Content->resize();
 		}
 
 	}

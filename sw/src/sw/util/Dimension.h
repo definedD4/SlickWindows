@@ -17,7 +17,7 @@ namespace sw { namespace util {
 		}
 		~Dimension() {}
 
-		Dimension(const Dimension& other) : m_Auto(other.isAuto()), m_Value(other.getValue()) {}
+		Dimension(const Dimension& other) : m_Auto(other.m_Auto), m_Value(other.m_Value) {}
 
 		static Dimension Auto() { return Dimension(true, 0); }
 		static Dimension fromInt(int val) { return Dimension(false, val); }

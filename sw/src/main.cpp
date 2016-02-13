@@ -16,13 +16,12 @@ using namespace ctrl;
 
 int main( void )
 {
-	APP;
+	startApplication();
 
 	Window* window = new Window(Size(640, 520), "My Window");
 
 	Test_Rect* rect = new Test_Rect();
-	rect->Margin = Thickness(10, 5, 10, 5);
-	rect->Fill = Colors::red;
+	rect->Fill = Colors::white;
 	window->setContent(rect);
 
 	window->redraw();

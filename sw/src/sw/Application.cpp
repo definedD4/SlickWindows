@@ -6,6 +6,10 @@ namespace sw {
 
 	Application* Application::s_Instance = nullptr;
 
+	void startApplication() {
+		APP;
+	}
+
 	void stopApplication() {
 		APP->stop();
 		delete Application::s_Instance;

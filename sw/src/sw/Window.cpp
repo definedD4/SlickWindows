@@ -74,6 +74,7 @@ namespace sw {
 	}
 
 	void Window::redraw() {
+		m_Root->resize();
 		m_Root->redraw();
 	}
 

@@ -15,13 +15,22 @@ namespace sw {
 		std::vector<T_EventHandler> m_Handlers;
 
 	public:
-		Event();
-		~Event();
+		Event() { }
+		~Event() { }
 
-		void addHandler(T_EventHandler handler);
-		void removeHandler(T_EventHandler handler);
+		void addHandler(T_EventHandler handler) {
+			m_Handlers.push_back(handler);
+		}
 
-		void raiseEvent(T_EventArgs args);
+		void removeHandler(T_EventHandler handler) {
+			handler.erase(std::remove(handler.begin(), handler.end(), handler), handler.end());
+		}
+
+		void raiseEvent(T_EventArgs args) {
+			for (T_EventHandler handler : m_Handlers) {
+				handler(args);
+			}
+		}
 	};
 
 }

@@ -12,6 +12,7 @@ namespace sw { namespace ctrl {
 
 	void ControlBase::resize() {
 		ResizeEvent.raiseEvent({ m_Size });
+		render();
 	}
 
 } }

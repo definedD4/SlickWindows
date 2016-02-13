@@ -31,6 +31,7 @@ namespace sw { namespace ctrl {
 		}
 		util::Size getSize() {
 			return m_Size;
+			ResizeEvent.raiseEvent({ m_Size });
 		}
 		void setSize(util::Size size) {
 			m_Size = size;

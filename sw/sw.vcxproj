@@ -161,13 +161,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PropertyHolder.cpp" />
     <ClCompile Include="src\sw\ctrl\ContainerControl.cpp" />
     <ClCompile Include="src\sw\ctrl\ContentListControl.cpp" />
     <ClCompile Include="src\sw\ctrl\ControlBase.cpp" />
     <ClCompile Include="src\sw\ctrl\LayoutControl.cpp" />
     <ClCompile Include="src\sw\ctrl\RootControl.cpp" />
     <ClCompile Include="src\sw\ctrl\VisualControl.cpp" />
-    <ClCompile Include="src\sw\Event.cpp" />
     <ClCompile Include="src\sw\Logger.cpp" />
     <ClCompile Include="src\sw\Dispatcher.cpp" />
     <ClCompile Include="src\sw\Property.cpp" />
@@ -180,6 +180,7 @@
     <ClCompile Include="src\sw\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PropertyHolder.h" />
     <ClInclude Include="src\sw\ctrl\ContainerControl.h" />
     <ClInclude Include="src\sw\ctrl\ContentListControl.h" />
     <ClInclude Include="src\sw\ctrl\ControlBase.h" />

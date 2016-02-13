@@ -14,6 +14,7 @@ namespace sw {
 
 	class Window;
 
+	void startApplication();
 	void stopApplication();
 
 	class Application {
