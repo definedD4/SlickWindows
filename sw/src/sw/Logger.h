@@ -41,10 +41,5 @@ namespace sw {
 		friend void destroyLogger();
 	};
 
-	Logger* logger();
-
-	Logger* logger() { return Logger::current(); }
-
-
 }
 

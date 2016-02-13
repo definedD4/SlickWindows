@@ -63,6 +63,9 @@
     <ClCompile Include="src\sw\ctrl\RootControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\sw\Event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sw\graph\Bitmap.h">
@@ -129,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sw\ctrl\Test_Rect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

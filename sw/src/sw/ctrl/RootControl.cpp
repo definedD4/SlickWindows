@@ -35,5 +35,9 @@ namespace sw {
 			m_Content->redraw();
 		}
 
+		void RootControl::resize() {
+			setSize(m_Owner->getSize());
+		}
+
 	}
 }

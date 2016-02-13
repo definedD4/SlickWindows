@@ -7,7 +7,7 @@ namespace sw {
 	Application* Application::s_Instance = nullptr;
 
 	void stopApplication() {
-		app()->stop();
+		APP->stop();
 		delete Application::s_Instance;
 		destroyLogger();
 	}
@@ -66,7 +66,7 @@ namespace sw {
 	}
 
 	void Application::fatalError(const string& description) {
-		logger()->logFatal(description);
+		LOGGER->logFatal(description);
 		pause();
 		exit(EXIT_FAILURE);
 		
@@ -95,14 +95,14 @@ namespace sw {
 	}
 
 	void Application::closeCallback(GLFWwindow* window) {
-		Window* wnd = app()->getWindow(window);
+		Window* wnd = APP->getWindow(window);
 		if (wnd) {
 			wnd->c_closeRequested();
 		}
 	}
 
 	void Application::sizeCallback(GLFWwindow* window, int width, int height) {
-		Window* wnd = app()->getWindow(window);
+		Window* wnd = APP->getWindow(window);
 		if (wnd) {
 			wnd->c_sizeChanged(width, height);
 		}
@@ -110,14 +110,14 @@ namespace sw {
 
 
 	void Application::positionCallback(GLFWwindow* window, int xpos, int ypos) {
-		Window* wnd = app()->getWindow(window);
+		Window* wnd = APP->getWindow(window);
 		if (wnd) {
 			wnd->c_positionChanged(xpos, ypos);
 		}
 	}
 
 	void Application::refreshCallback(GLFWwindow* window) {
-		Window* wnd = app()->getWindow(window);
+		Window* wnd = APP->getWindow(window);
 		if (wnd) {
 			wnd->c_refresh();
 		}

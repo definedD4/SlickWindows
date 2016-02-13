@@ -12,9 +12,8 @@
 
 namespace sw {
 
-	class Application;
+	class Window;
 
-	Application* app();
 	void stopApplication();
 
 	class Application {
@@ -67,10 +66,6 @@ namespace sw {
 
 		friend void stopApplication();
 	};
-
-	Application* app() {
-		return Application::current();
-	}
 
 }
 

@@ -48,6 +48,8 @@ namespace sw {
 
 			setSize(newSize);
 			setPosition(newPosition);
+
+			ControlBase::resize();
 		}
 	}
 }

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "sw/Window.h"
+#include "sw/ctrl/RootControl.h"
 
 #include "sw/ctrl/Test_Rect.h"
 
@@ -16,7 +16,7 @@ using namespace ctrl;
 
 int main( void )
 {
-	app();
+	APP;
 
 	Window* window = new Window(Size(640, 520), "My Window");
 
@@ -27,7 +27,7 @@ int main( void )
 
 	window->redraw();
 
-	app()->run();
+	APP->run();
 
 	stopApplication();
 	exit(EXIT_SUCCESS);

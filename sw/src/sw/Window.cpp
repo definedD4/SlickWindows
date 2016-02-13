@@ -20,7 +20,7 @@ namespace sw {
 			exit(EXIT_FAILURE);
 		}
 
-		app()->registerWindow(this);
+		APP->registerWindow(this);
 
 		glfwMakeContextCurrent(m_Handle);
 
@@ -85,7 +85,7 @@ namespace sw {
 	void Window::c_closeRequested() {
 		glfwSetWindowShouldClose(m_Handle, GL_TRUE);
 		destroyWindow();
-		app()->deleteWindow(this);
+		APP->deleteWindow(this);
 	}
 
 	void Window::c_sizeChanged(int width, int height) {

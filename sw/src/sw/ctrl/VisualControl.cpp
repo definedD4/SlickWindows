@@ -2,8 +2,12 @@
 
 namespace sw { namespace ctrl {
 
-
-	VisualControl::VisualControl() : ControlBase() {}
+	VisualControl::VisualControl() : ControlBase() {
+		m_RenderBuffer = new graph::Bitmap(getSize());
+		ResizeEvent.addHandler([&](ControlBase::EA_ResizeEvent args) {
+			m_RenderBuffer = new graph::Bitmap(getSize());
+		});
+	}
 
 	VisualControl::~VisualControl() {
 		delete m_RenderBuffer;

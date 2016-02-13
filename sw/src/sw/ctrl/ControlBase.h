@@ -3,6 +3,7 @@
 #include "../util/Point.h"
 #include "../util/Size.h"
 #include "../graph/Bitmap.h"
+#include "../Event.h"
 
 namespace sw { namespace ctrl {
 	
@@ -28,6 +29,9 @@ namespace sw { namespace ctrl {
 		void setPosition(util::Point position) {
 			m_Position = position;
 		}
+		util::Size getSize() {
+			return m_Size;
+		}
 		void setSize(util::Size size) {
 			m_Size = size;
 		}
@@ -43,7 +47,12 @@ namespace sw { namespace ctrl {
 		virtual void render();
 		virtual void redraw() = 0;
 		virtual void drawOn(graph::Bitmap* target, util::Point offset) = 0;
-		virtual void resize() = 0;
+		virtual void resize();
+
+		struct EA_ResizeEvent {
+			util::Size newSize;
+		};
+		Event<EA_ResizeEvent> ResizeEvent;
 
 		friend class RootControl;
 	};

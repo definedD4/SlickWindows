@@ -10,8 +10,15 @@
 #include "Application.h"
 #include "util/Size.h"
 #include "graph/Bitmap.h"
+#include "ctrl/RootControl.h"
+#include "ctrl/ControlBase.h"
 
 namespace sw {
+
+	namespace ctrl { 
+		class ControlBase;
+		class RootControl; 
+	}
 
 	class Window {
 	private:

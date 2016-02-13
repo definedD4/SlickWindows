@@ -5,6 +5,8 @@
 
 namespace sw {
 
+	class Dispatcher;
+
 	enum class TaskState {
 		NotScheduled,
 		Scheduled,

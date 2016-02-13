@@ -1,10 +1,13 @@
 #pragma once
 
 #include "../Common.h"
-#include "../Window.h"
 #include "ContainerControl.h"
+#include "../Window.h"
 
 namespace sw {
+
+	class Window;
+
 	namespace ctrl {
 
 		class RootControl : public virtual ContainerControl {
@@ -24,9 +27,7 @@ namespace sw {
 			virtual void redraw();
 
 			virtual void drawOn(graph::Bitmap* target, util::Point offset) { }
-			virtual void resize() {
-				setSize(m_Owner->getSize());
-			}
+			virtual void resize();
 		};
 
 	}
