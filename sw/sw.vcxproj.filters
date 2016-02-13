@@ -63,7 +63,7 @@
     <ClCompile Include="src\sw\ctrl\RootControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PropertyHolder.cpp">
+    <ClCompile Include="src\sw\PropertyContainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -137,7 +137,13 @@
     <ClInclude Include="src\sw\Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PropertyHolder.h">
+    <ClInclude Include="src\sw\PropertyContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\AttachedProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\AttachedPropertyBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
