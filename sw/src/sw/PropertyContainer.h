@@ -9,7 +9,10 @@ namespace sw {
 	class PropertyContainer
 	{
 	public:
-		typedef std::map<AttachedPropertyBase*, void*> T_ValueMap;
+		typedef std::map<
+			AttachedPropertyBase*,
+			void*>
+			T_ValueMap;
 
 	private:
 		T_ValueMap m_Values;

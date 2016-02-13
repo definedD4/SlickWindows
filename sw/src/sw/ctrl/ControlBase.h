@@ -4,12 +4,13 @@
 #include "../util/Size.h"
 #include "../graph/Bitmap.h"
 #include "../Event.h"
+#include "../PropertyContainer.h"
 
 namespace sw { namespace ctrl {
 	
 	class ContainerControl;
 
-	class ControlBase {
+	class ControlBase : public virtual PropertyContainer{
 	private:
 		ContainerControl* m_Parrent;
 

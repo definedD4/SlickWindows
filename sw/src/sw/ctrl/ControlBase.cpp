@@ -2,7 +2,7 @@
 
 namespace sw { namespace ctrl {
 
-	ControlBase::ControlBase() {}
+	ControlBase::ControlBase() : PropertyContainer() {}
 
 	ControlBase::~ControlBase() {}
 

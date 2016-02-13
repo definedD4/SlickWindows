@@ -12,7 +12,7 @@ namespace sw {
 	}
 
 	void* PropertyContainer::tryGetValue(AttachedPropertyBase* property) {
-		auto it = std::find(m_Values.begin(), m_Values.end(), property);
+		auto it = m_Values.find(property);
 		if (it == m_Values.end()) {
 			return nullptr;
 		}
