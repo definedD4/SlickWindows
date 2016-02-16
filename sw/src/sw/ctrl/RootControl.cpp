@@ -28,7 +28,9 @@ namespace sw {
 		}
 
 		void RootControl::render() {
-			m_Content->drawOn(m_Owner->getBuffer(), Point(0, 0));
+			if (m_Content) {
+				m_Content->drawOn(m_Owner->getBuffer(), Point(0, 0));
+			}
 		}
 
 		void RootControl::redraw() {

@@ -4,7 +4,7 @@ namespace sw { namespace ctrl {
 
 	VisualControl::VisualControl() : ControlBase() {
 		m_RenderBuffer = new graph::Bitmap(getSize());
-		ResizeEvent.addHandler([&](ControlBase::EA_ResizeEvent args) {
+		ResizeEvent.addHandler([&](ControlBase::ResizeEventArgs args) {
 			m_RenderBuffer = new graph::Bitmap(getSize());
 		});
 	}

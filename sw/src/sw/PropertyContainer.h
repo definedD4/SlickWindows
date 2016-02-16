@@ -3,14 +3,18 @@
 #include <map>
 
 #include "AttachedPropertyBase.h"
+#include "AttachedProperty.h"
 
 namespace sw {
+
+	template<typename T>
+	class AttachedProperty;
 
 	class PropertyContainer
 	{
 	public:
 		typedef std::map<
-			AttachedPropertyBase*,
+			const AttachedPropertyBase*,
 			void*>
 			T_ValueMap;
 
@@ -21,7 +25,20 @@ namespace sw {
 		PropertyContainer();
 		virtual ~PropertyContainer();
 
-		void* tryGetValue(AttachedPropertyBase* property);
+		void* tryGetValue(const AttachedPropertyBase* property) const;
+
+		template<typename T>
+		void setProperty(const AttachedProperty<T>* property, T value) {
+			// Values are stored in heap so they can be converted to void*
+			const AttachedPropertyBase* base = static_cast<const AttachedPropertyBase*>(property);
+
+			// Delete previous value to prevent memory leaks
+			delete m_Values[base];
+
+			void* val = (void*)new T(value);
+
+			m_Values[base] = val;
+		}
 	};
 
 }

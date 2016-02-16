@@ -3,13 +3,19 @@
 namespace sw {
 	namespace ctrl {
 
-		ContentListControl::ContentListControl() {}
+		ContentListControl::ContentListControl() 
+			: ContainerControl(), ControlBase() {
+		}
 
-		ContentListControl::~ContentListControl() {}
+		ContentListControl::~ContentListControl() {
+			for (ControlBase* item : m_Children) {
+				delete item;
+			}
+		}
 
 		void ContentListControl::redraw() {
 			suspendRendering();
-			for (ControlBase* item : *getItems()) {
+			for (ControlBase* item : m_Children) {
 				item->redraw();
 			}
 			resumeRendering();

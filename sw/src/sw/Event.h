@@ -3,6 +3,10 @@
 #include <vector>
 #include <functional>
 
+
+#define EVENT(x, y) struct x##Args y; \
+		Event<x##Args> x;
+
 namespace sw {
 
 	template<typename T>

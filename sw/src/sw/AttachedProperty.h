@@ -7,6 +7,8 @@
 
 namespace sw {
 
+	class PropertyContainer;
+
 	template<typename T>
 	class AttachedProperty : public virtual AttachedPropertyBase
 	{
@@ -17,7 +19,8 @@ namespace sw {
 		T_ValueType m_DefaultValue;
 
 	public:
-		AttachedProperty(std::string name) : AttachedPropertyBase(name) {
+		AttachedProperty(std::string name, T_ValueType defaultValue)
+			: AttachedPropertyBase(name), m_DefaultValue(defaultValue) {
 
 		}
 
@@ -25,7 +28,7 @@ namespace sw {
 
 		}
 
-		T_ValueType getValue(PropertyContainer* object) {
+		T_ValueType getValue(PropertyContainer* object) const {
 			void* res = object->tryGetValue(this);
 			if (res == 0) {
 				return m_DefaultValue;

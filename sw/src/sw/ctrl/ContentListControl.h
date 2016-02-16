@@ -6,10 +6,21 @@
 
 namespace sw { namespace ctrl {
 
-	class ContentListControl : ContainerControl {
-	protected:
+	class ControlBase;
 
-		virtual std::vector<ControlBase*>* getItems() = 0;
+	class ContentListControl : ContainerControl {
+	private:
+		std::vector<ControlBase*> m_Children;
+
+	protected:
+		std::vector<ControlBase*> getChildren() const {
+			return m_Children;
+		}
+
+		void addToChildren(ControlBase* child) {
+			child->setParrent(static_cast<ContainerControl*>(this));
+			m_Children.push_back(child);
+		}
 
 	public:
 		ContentListControl();

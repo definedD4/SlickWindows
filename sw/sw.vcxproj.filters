@@ -66,6 +66,9 @@
     <ClCompile Include="src\sw\PropertyContainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\sw\ctrl\Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sw\graph\Bitmap.h">
@@ -144,6 +147,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sw\AttachedPropertyBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\ctrl\Grid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

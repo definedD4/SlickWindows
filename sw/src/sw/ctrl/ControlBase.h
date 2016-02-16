@@ -10,7 +10,7 @@ namespace sw { namespace ctrl {
 	
 	class ContainerControl;
 
-	class ControlBase : public virtual PropertyContainer{
+	class ControlBase : public virtual PropertyContainer {
 	private:
 		ContainerControl* m_Parrent;
 
@@ -30,12 +30,13 @@ namespace sw { namespace ctrl {
 		void setPosition(util::Point position) {
 			m_Position = position;
 		}
+
 		util::Size getSize() {
 			return m_Size;
-			ResizeEvent.raiseEvent({ m_Size });
 		}
 		void setSize(util::Size size) {
 			m_Size = size;
+			ResizeEvent.raiseEvent({ m_Size });
 		}
 
 		bool isRenderingSuspended() const { return m_RenderingSuspended; }
@@ -51,12 +52,10 @@ namespace sw { namespace ctrl {
 		virtual void drawOn(graph::Bitmap* target, util::Point offset) = 0;
 		virtual void resize();
 
-		struct EA_ResizeEvent {
-			util::Size newSize;
-		};
-		Event<EA_ResizeEvent> ResizeEvent;
+		EVENT(ResizeEvent, { util::Size newSize; })
 
 		friend class RootControl;
+		friend class ContentListControl;
 	};
 
 } }

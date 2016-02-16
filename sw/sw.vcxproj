@@ -161,6 +161,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\sw\ctrl\Grid.cpp" />
     <ClCompile Include="src\sw\PropertyContainer.cpp" />
     <ClCompile Include="src\sw\ctrl\ContainerControl.cpp" />
     <ClCompile Include="src\sw\ctrl\ContentListControl.cpp" />
@@ -180,6 +181,7 @@
     <ClCompile Include="src\sw\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\sw\ctrl\Grid.h" />
     <ClInclude Include="src\sw\AttachedPropertyBase.h" />
     <ClInclude Include="src\sw\AttachedProperty.h" />
     <ClInclude Include="src\sw\PropertyContainer.h" />

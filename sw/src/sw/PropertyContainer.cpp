@@ -11,7 +11,7 @@ namespace sw {
 	{
 	}
 
-	void* PropertyContainer::tryGetValue(AttachedPropertyBase* property) {
+	void* PropertyContainer::tryGetValue(const AttachedPropertyBase* property) const {
 		auto it = m_Values.find(property);
 		if (it == m_Values.end()) {
 			return nullptr;
