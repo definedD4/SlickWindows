@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ostream>
+
 namespace sw { namespace util {
 
 	struct Size {
@@ -24,6 +26,11 @@ namespace sw { namespace util {
 			return h;
 		}
 	};
+
+	inline std::ostream& operator << (std::ostream& stream, Size& size) {
+		stream << "sz{" << size.w << "," << size.h << "}";
+		return stream;
+	}
 
 }}
 

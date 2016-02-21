@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ostream>
+
 namespace sw { namespace util {
 
 	struct Point {
@@ -35,6 +37,11 @@ namespace sw { namespace util {
 
 	inline Point operator -(Point& left, Point& right) {
 		return Point(left.x - right.x, left.y - right.y);
+	}
+
+	inline std::ostream& operator << (std::ostream& stream, Point& point) {
+		stream << "pt{" << point.x << "," << point.y << "}";
+		return stream;
 	}
 
 }}

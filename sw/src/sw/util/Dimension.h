@@ -12,9 +12,7 @@ namespace sw { namespace util {
 
 		Dimension(bool Auto, int value) : m_Auto(Auto), m_Value(value) {}
 	public:
-		Dimension() {
-			m_Auto = true;
-		}
+		Dimension() : m_Auto(true), m_Value(0) { }
 		~Dimension() {}
 
 		Dimension(const Dimension& other) : m_Auto(other.m_Auto), m_Value(other.m_Value) {}

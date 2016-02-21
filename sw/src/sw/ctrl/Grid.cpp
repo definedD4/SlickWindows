@@ -25,6 +25,22 @@ namespace sw {
 		}
 
 		void Grid::drawOn(graph::Bitmap* target, util::Point offset) {
+#ifdef _DEBUG
+			std::ostream& log = LOGGER->streamLog(); 
+			log << "Starting grid draw: size = " << getSize() << std::endl;
+			log << "Columns: ";
+			for(int val : m_ColumnWidths) {
+				log << val << " ";
+			}
+			log << std::endl;
+
+			log << "Rows: ";
+			for (int val : m_RowHeights) {
+				log << val << " ";
+			}
+			log << std::endl;
+#endif
+
 			for (ControlBase* child : getChildren()) {
 				int row = RowProperty.getValue(
 					static_cast<PropertyContainer*>(child));
@@ -41,12 +57,19 @@ namespace sw {
 
 				util::Point cell = util::Point(offset_x, offset_y);
 
+#ifdef _DEBUG
+				log << "Drawing child: cell offset = " << cell << std::endl
+					<< "child pos = " << child->getPosition()
+					<< " child size = " << child->getSize() << std::endl;
+#endif
+
 				child->drawOn(target, offset + cell);
 			}
 		}
 
 		void Grid::resize() {
 			LayoutControl::resize();
+			recalculateGrid();
 
 			suspendRendering();
 			for (ControlBase* item : getChildren()) {
@@ -61,7 +84,7 @@ namespace sw {
 				static_cast<PropertyContainer*>(control));
 			int col = ColumnProperty.getValue(
 				static_cast<PropertyContainer*>(control));
-			return util::Size(m_RowHeights[row], m_ColumnWidths[col]);
+			return util::Size(m_ColumnWidths[col], m_RowHeights[row]);
 		}
 
 		void Grid::setGrid(const std::vector<int>& columns, const std::vector<int>& rows) {

@@ -1,5 +1,8 @@
 #pragma once
 
+#include "sw/Logger.h"
+#include "sw/Common.h"
+
 #include "../graph/Bitmap.h"
 #include "../util/Point.h"
 

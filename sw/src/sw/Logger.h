@@ -34,6 +34,9 @@ namespace sw {
 		void logError(const std::string& message) { log(LogLevel::Error, message); }
 		void logFatal(const std::string& message) { log(LogLevel::Fatal, message); }
 
+		std::ostream& streamLog(LogLevel level);
+		std::ostream& streamLog() { return streamLog(LogLevel::Info); }
+
 	private:
 		Logger();
 		~Logger();

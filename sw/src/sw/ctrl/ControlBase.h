@@ -24,16 +24,10 @@ namespace sw { namespace ctrl {
 	protected:
 		ContainerControl* getParrent() const { return m_Parrent; }
 
-		util::Point getPosition() const {
-			return m_Position;
-		}
 		void setPosition(util::Point position) {
 			m_Position = position;
 		}
 
-		util::Size getSize() {
-			return m_Size;
-		}
 		void setSize(util::Size size) {
 			m_Size = size;
 			ResizeEvent.raiseEvent({ m_Size });
@@ -46,6 +40,9 @@ namespace sw { namespace ctrl {
 	public:
 		ControlBase();
 		virtual ~ControlBase();
+
+		util::Size getSize() const { return m_Size; }
+		util::Point getPosition() const { return m_Position; }
 
 		virtual void render();
 		virtual void redraw() = 0;

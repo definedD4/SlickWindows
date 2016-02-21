@@ -6,6 +6,12 @@ namespace sw {
 
 	Logger* Logger::s_Instance = nullptr;
 
+	std::ostream& Logger::streamLog(LogLevel level) {
+		setConsoleTextAttributes(FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
+		cout << "SW INFO: ";
+		return cout;
+	}
+
 	Logger::Logger() { }
 
 	Logger::~Logger() { }

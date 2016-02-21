@@ -12,6 +12,7 @@
 	#define ASSERT(x) if(!(x)) { __debugbreak(); }
 	#define FATAL(x, y) if(!(x)) { Application::fatalError(y); }
 	#define WARN(x, y) if(x) { LOGGER->logWarning(y); }
+	#define DEBUG_INFO(x) LOGGER->logInfo(x)
 #else
 	#define ASSERT(x)
 	#define FATAL(x, y)
