@@ -1,12 +1,16 @@
 #pragma once
 
-#include "../util/Point.h"
+#include "sw/util/Point.h"
 #include "../util/Size.h"
-#include "../graph/Bitmap.h"
 #include "../Event.h"
 #include "../PropertyContainer.h"
+#include "sw/Renderer.h"
 
-namespace sw { namespace ctrl {
+namespace sw { 
+	
+	class Renderer;
+
+	namespace ctrl {
 	
 	class ContainerControl;
 
@@ -17,12 +21,10 @@ namespace sw { namespace ctrl {
 		util::Point m_Position;
 		util::Size m_Size;
 
-		bool m_RenderingSuspended = false;
-
 		void setParrent(ContainerControl* parrent) { m_Parrent = parrent; }
 
 	protected:
-		ContainerControl* getParrent() const { return m_Parrent; }
+		ContainerControl* getParrent() const;
 
 		void setPosition(util::Point position) {
 			m_Position = position;
@@ -30,12 +32,10 @@ namespace sw { namespace ctrl {
 
 		void setSize(util::Size size) {
 			m_Size = size;
-			ResizeEvent.raiseEvent({ m_Size });
+			//ResizeEvent.raiseEvent({ m_Size });
 		}
 
-		bool isRenderingSuspended() const { return m_RenderingSuspended; }
-		void suspendRendering() { m_RenderingSuspended = true; }
-		void resumeRendering() { m_RenderingSuspended = false; }
+		virtual Renderer* getRenderer() const;
 
 	public:
 		ControlBase();
@@ -44,12 +44,12 @@ namespace sw { namespace ctrl {
 		util::Size getSize() const { return m_Size; }
 		util::Point getPosition() const { return m_Position; }
 
-		virtual void render();
-		virtual void redraw() = 0;
-		virtual void drawOn(graph::Bitmap* target, util::Point offset) = 0;
-		virtual void resize();
+		virtual util::Point transformToWindowSpace(util::Point point) const;
 
-		EVENT(ResizeEvent, { util::Size newSize; })
+		virtual void render() = 0;
+		virtual void resize() = 0;
+
+		//EVENT(ResizeEvent, { util::Size newSize; })
 
 		friend class RootControl;
 		friend class ContentListControl;

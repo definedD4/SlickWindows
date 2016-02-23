@@ -12,6 +12,10 @@ namespace sw {
 			delete m_Content;
 		}
 
+		Renderer* RootControl::getRenderer() const {
+			return m_Owner->getRenderer();
+		}
+
 		util::Size RootControl::getContainerArea(ControlBase* control) {
 			ASSERT(m_Owner != nullptr)
 			ASSERT(control == m_Content)
@@ -28,13 +32,7 @@ namespace sw {
 		}
 
 		void RootControl::render() {
-			if (m_Content) {
-				m_Content->drawOn(m_Owner->getBuffer(), Point(0, 0));
-			}
-		}
-
-		void RootControl::redraw() {
-			m_Content->redraw();
+			m_Content->render();
 		}
 
 		void RootControl::resize() {

@@ -3,7 +3,6 @@
 using namespace std;
 
 using namespace sw;
-using namespace graph;
 using namespace ctrl;
 
 namespace sw {
@@ -30,7 +29,7 @@ namespace sw {
 		glfwSetWindowPosCallback(m_Handle, Application::positionCallback);
 		glfwSetWindowRefreshCallback(m_Handle, Application::refreshCallback);
 
-		m_Buffer = new Bitmap(m_Size);
+		m_Renderer = new Renderer(this);
 
 		GLenum err = glewInit();
 		if (err != GLEW_OK) {
@@ -65,17 +64,10 @@ namespace sw {
 
 	void Window::render() {
 		glfwMakeContextCurrent(m_Handle);
-		glRasterPos2i(-1, -1);
 
-		util::Size sz = m_Buffer->getSize(); 
-		glDrawPixels(sz.w, sz.h, GL_RGBA, GL_UNSIGNED_BYTE, m_Buffer->getPixels());
+		m_Root->render();
 
 		glfwSwapBuffers(m_Handle);
-	}
-
-	void Window::redraw() {
-		m_Root->resize();
-		m_Root->redraw();
 	}
 
 	void Window::c_keyPressed(int key, int scancode, int action, int mods) {
@@ -93,8 +85,9 @@ namespace sw {
 		m_Size.w = width;
 		m_Size.h = height;
 
-		delete m_Buffer;
-		m_Buffer = new Bitmap(m_Size);
+		makeContextCurrent();
+
+		glViewport(0, 0, width, height);
 
 		m_Root->resize();
 	}

@@ -1,15 +1,13 @@
 #pragma once
 
-#include "VisualControl.h"
 #include "LayoutControl.h"
 
 namespace sw {
 	namespace ctrl {
 
-		class Test_Rect : public virtual VisualControl,
-			public virtual LayoutControl {
+		class Test_Rect : public virtual LayoutControl {
 		public:
-			Test_Rect() : VisualControl(), LayoutControl() {
+			Test_Rect() : LayoutControl() {
 
 			}
 			virtual ~Test_Rect() {
@@ -19,13 +17,11 @@ namespace sw {
 			Property<util::Color> Fill;
 
 			virtual void render() {
-				getRenderBuffer()->clear(Fill());
-				ControlBase::render();
+				getRenderer()->fillRect(util::Rect(transformToWindowSpace(util::Point()),
+					transformToWindowSpace(util::Point(getSize().w, getSize().h))),
+					Fill());
 			}
 
-			virtual void redraw() {
-				render();
-			}
 		};
 
 	}

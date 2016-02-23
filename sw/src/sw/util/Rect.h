@@ -6,45 +6,37 @@
 namespace sw { namespace util {
 
 	struct Rect {
-		int x, y, w, h;
+		Point p1, p2;
 
-		Rect() : x(0), y(0), w(0), h(0) { }
+		Rect() { }
 
-		Rect(const Rect& src) : x(src.x), y(src.y), w(src.w), h(src.h) { }
+		Rect(const Rect& src) : p1(src.p1), p2(src.p2) { }
 
-		Rect(int x_, int y_, int w_, int h_) : x(x_), y(y_), w(w_), h(h_) { }
+		Rect(const Point& p1_, const Point& p2_) : p1(p1_), p2(p2_) { }
 
-		Rect(const Point& p, const Size& sz) : x(p.x), y(p.y), w(sz.w), h(sz.h) { }
+		Rect(int x, int y, int w, int h) : p1(x, y), p2(x + w, y + h) { }
 
-		static Rect fromCoords(const Point& p1, const Point& p2) {
-			return Rect(p1.x, p1.y, p2.x - p1.x, p2.y - p1.y);
-		}
+		Rect(const Point& p, const Size& sz) : p1(p), p2(p.x + sz.w, p.y + sz.h) { }
 
-		static Rect fromCoords(int x1, int y1, int x2, int y2) {
-			return Rect(x1, y1, x2 - x1, y2 - y1);
-		}
-
-		void operator=(Rect& src) {
-			x = src.x;
-			y = src.y;
-			w = src.w;
-			h = src.h;
+		void operator=(const Rect& src) {
+			p1 = src.p1;
+			p2 = src.p2;
 		}
 
 		int getX1() const {
-			return x;
+			return p1.x;
 		}
 
 		int getY1() const {
-			return y;
+			return p1.y;
 		}
 
 		int getX2() const {
-			return x + w;
+			return p2.x;
 		}
 
 		int getY2() const {
-			return y + h;
+			return p2.y;
 		}
 	};
 

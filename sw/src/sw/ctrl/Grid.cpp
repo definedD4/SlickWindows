@@ -8,10 +8,6 @@ namespace sw {
 
 		Grid::Grid() :
 			ContentListControl(), ControlBase() {
-			ResizeEvent.addHandler([&](ControlBase::ResizeEventArgs args) {
-				this->recalculateGrid();
-				this->redraw();
-			});
 		}
 
 
@@ -19,27 +15,15 @@ namespace sw {
 		}
 
 		void Grid::render() {
-			if (!isRenderingSuspended()) {
-				getParrent()->render();
+			for (ControlBase* child : getChildren()) {
+				child->render();
 			}
 		}
 
-		void Grid::drawOn(graph::Bitmap* target, util::Point offset) {
-#ifdef _DEBUG
-			std::ostream& log = LOGGER->streamLog(); 
-			log << "Starting grid draw: size = " << getSize() << std::endl;
-			log << "Columns: ";
-			for(int val : m_ColumnWidths) {
-				log << val << " ";
-			}
-			log << std::endl;
+		void Grid::resize() {
+			LayoutControl::resize();
 
-			log << "Rows: ";
-			for (int val : m_RowHeights) {
-				log << val << " ";
-			}
-			log << std::endl;
-#endif
+			recalculateGrid();
 
 			for (ControlBase* child : getChildren()) {
 				int row = RowProperty.getValue(
@@ -55,27 +39,11 @@ namespace sw {
 					offset_y += m_RowHeights[i];
 				}
 
-				util::Point cell = util::Point(offset_x, offset_y);
-
-#ifdef _DEBUG
-				log << "Drawing child: cell offset = " << cell << std::endl
-					<< "child pos = " << child->getPosition()
-					<< " child size = " << child->getSize() << std::endl;
-#endif
-
-				child->drawOn(target, offset + cell);
+				util::Point pos = util::Point(offset_x, offset_y);
+				setChildPosition(child, pos);
+				child->resize();
 			}
-		}
 
-		void Grid::resize() {
-			LayoutControl::resize();
-			recalculateGrid();
-
-			suspendRendering();
-			for (ControlBase* item : getChildren()) {
-				item->resize();
-			}
-			resumeRendering();
 			render();
 		}
 

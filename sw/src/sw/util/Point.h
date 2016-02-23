@@ -21,7 +21,7 @@ namespace sw { namespace util {
 			return y;
 		}
 
-		void operator=(Point& src) {
+		void operator=(const Point& src) {
 			x = src.x;
 			y = src.y;
 		}

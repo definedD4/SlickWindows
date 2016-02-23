@@ -2,17 +2,21 @@
 
 namespace sw { namespace ctrl {
 
-	ControlBase::ControlBase() : PropertyContainer() {}
+	ControlBase::ControlBase() : 
+		PropertyContainer() {}
 
 	ControlBase::~ControlBase() {}
 
-	void ControlBase::render() {
-		m_Parrent->render();
+	ContainerControl* ControlBase::getParrent() const {
+		return m_Parrent;
 	}
 
-	void ControlBase::resize() {
-		ResizeEvent.raiseEvent({ m_Size });
-		render();
+	Renderer* ControlBase::getRenderer() const {
+		return m_Parrent->getRenderer();
+	}
+
+	util::Point ControlBase::transformToWindowSpace(util::Point point) const {
+		return m_Parrent->transformToWindowSpace(point + m_Position);
 	}
 
 } }

@@ -12,14 +12,5 @@ namespace sw {
 				delete item;
 			}
 		}
-
-		void ContentListControl::redraw() {
-			suspendRendering();
-			for (ControlBase* item : m_Children) {
-				item->redraw();
-			}
-			resumeRendering();
-			render();
-		}
 	}
 }

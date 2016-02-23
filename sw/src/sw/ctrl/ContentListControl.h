@@ -8,7 +8,7 @@ namespace sw { namespace ctrl {
 
 	class ControlBase;
 
-	class ContentListControl : ContainerControl {
+	class ContentListControl : virtual public ContainerControl {
 	private:
 		std::vector<ControlBase*> m_Children;
 
@@ -22,13 +22,13 @@ namespace sw { namespace ctrl {
 			m_Children.push_back(child);
 		}
 
+		void setChildPosition(ControlBase* child, util::Point pos) {
+			child->setPosition(pos);
+		}
+
 	public:
 		ContentListControl();
 		virtual ~ContentListControl();
-
-
-		virtual void render() = 0;
-		virtual void redraw();
 	};
 
 }}

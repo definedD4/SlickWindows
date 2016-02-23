@@ -1,5 +1,8 @@
 ﻿#pragma once
-#include "ControlBase.h"
+
+#include "sw/util/Size.h"
+
+#include "sw/ctrl/ControlBase.h"
 
 namespace sw { namespace ctrl {
 

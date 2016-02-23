@@ -7,9 +7,13 @@
 #include <GLFW/glfw3.h>
 
 #include "Common.h"
-#include "Application.h"
+
 #include "util/Size.h"
-#include "graph/Bitmap.h"
+
+#include "sw/Renderer.h"
+
+#include "Application.h"
+
 #include "ctrl/RootControl.h"
 #include "ctrl/ControlBase.h"
 
@@ -20,6 +24,8 @@ namespace sw {
 		class RootControl; 
 	}
 
+	class Renderer;
+
 	class Window {
 	private:
 		GLFWwindow* m_Handle;
@@ -27,7 +33,7 @@ namespace sw {
 		util::Size m_Size;
 		std::string m_Title;
 
-		graph::Bitmap* m_Buffer;
+		Renderer* m_Renderer;
 
 		ctrl::RootControl* m_Root;
 
@@ -57,11 +63,15 @@ namespace sw {
 			glfwSetWindowTitle(m_Handle, m_Title.c_str());
 		}
 
-		graph::Bitmap* getBuffer() const {
-			return m_Buffer;
+		Renderer* getRenderer() const {
+			return m_Renderer;
 		}
 
 		void setContent(ctrl::ControlBase* content);
+
+		void makeContextCurrent() const {
+			glfwMakeContextCurrent(m_Handle);
+		}
 
 		void destroyWindow();
 		bool windowShoudClose() const;

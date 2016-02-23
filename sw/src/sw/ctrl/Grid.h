@@ -30,7 +30,6 @@ namespace sw {
 			~Grid();
 
 			virtual void render();
-			virtual void drawOn(graph::Bitmap* target, util::Point offset);
 			virtual void resize();
 
 			virtual util::Size getContainerArea(ControlBase* control);

@@ -51,9 +51,6 @@
     <ClCompile Include="src\sw\ctrl\ContainerControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sw\ctrl\VisualControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\sw\ctrl\LayoutControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -67,6 +64,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\sw\ctrl\Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sw\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -119,9 +119,6 @@
     <ClInclude Include="src\sw\ctrl\ContainerControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sw\ctrl\VisualControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\sw\ctrl\LayoutControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -152,5 +149,17 @@
     <ClInclude Include="src\sw\ctrl\Grid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\sw\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\util\Vec2f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\util\Rectf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
