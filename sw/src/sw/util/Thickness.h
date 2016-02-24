@@ -1,6 +1,6 @@
 #pragma once
 
-namespace sw { namespace util {
+namespace sw { 
 	
 	struct Thickness {
 		int t, r, b, l;
@@ -10,5 +10,5 @@ namespace sw { namespace util {
 			: t(t_), r(r_), b(b_), l(l_) { }
 	};
 
-}}
+}
 

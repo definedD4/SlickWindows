@@ -1,6 +1,6 @@
 #include "ControlBase.h"
 
-namespace sw { namespace ctrl {
+namespace sw { 
 
 	ControlBase::ControlBase() : 
 		PropertyContainer() {}
@@ -15,8 +15,8 @@ namespace sw { namespace ctrl {
 		return m_Parrent->getRenderer();
 	}
 
-	util::Point ControlBase::transformToWindowSpace(util::Point point) const {
+	Point ControlBase::transformToWindowSpace(Point point) const {
 		return m_Parrent->transformToWindowSpace(point + m_Position);
 	}
 
-} }
+}

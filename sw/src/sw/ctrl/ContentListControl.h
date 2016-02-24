@@ -2,9 +2,9 @@
 
 #include <vector>
 
-#include "ContainerControl.h"
+#include "ControlBase.h"
 
-namespace sw { namespace ctrl {
+namespace sw {
 
 	class ControlBase;
 
@@ -13,7 +13,7 @@ namespace sw { namespace ctrl {
 		std::vector<ControlBase*> m_Children;
 
 	protected:
-		std::vector<ControlBase*> getChildren() const {
+		const std::vector<ControlBase*>& getChildren() const {
 			return m_Children;
 		}
 
@@ -22,7 +22,7 @@ namespace sw { namespace ctrl {
 			m_Children.push_back(child);
 		}
 
-		void setChildPosition(ControlBase* child, util::Point pos) {
+		void setChildPosition(ControlBase* child, Point pos) {
 			child->setPosition(pos);
 		}
 
@@ -31,5 +31,5 @@ namespace sw { namespace ctrl {
 		virtual ~ContentListControl();
 	};
 
-}}
+}
 

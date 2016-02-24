@@ -4,10 +4,7 @@
 #include "../util/color.h"
 #include "../util/math.h"
 
-using namespace sw::util;
-
 namespace sw {
-	namespace graph {
 
 		Bitmap::Bitmap(Size size) {
 			m_Size = size;
@@ -82,4 +79,3 @@ namespace sw {
 
 		}
 	}
-}

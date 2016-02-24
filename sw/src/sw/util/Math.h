@@ -1,6 +1,6 @@
 #pragma once
 
-namespace sw { namespace util {
+namespace sw { 
 
 	inline int max(int a, int b) {
 		return a > b ? a : b;
@@ -14,5 +14,5 @@ namespace sw { namespace util {
 		return min(max(val, min_val), max_val);
 	}
 
-}}
+}
 

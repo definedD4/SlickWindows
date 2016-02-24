@@ -19,37 +19,35 @@
 
 namespace sw {
 
-	namespace ctrl { 
-		class ControlBase;
-		class RootControl; 
-	}
 
+	class ControlBase;
+	class RootControl;
 	class Renderer;
 
 	class Window {
 	private:
 		GLFWwindow* m_Handle;
 
-		util::Size m_Size;
+		Size m_Size;
 		std::string m_Title;
 
 		Renderer* m_Renderer;
 
-		ctrl::RootControl* m_Root;
+		RootControl* m_Root;
 
 	public:
-		Window(util::Size size, std::string title);
+		Window(Size size, std::string title);
 		~Window();
 
 		GLFWwindow* getHandle() const {
 			return m_Handle;
 		}
 
-		util::Size getSize() const {
+		Size getSize() const {
 			return m_Size;
 		}
 
-		void setSize(util::Size size) {
+		void setSize(Size size) {
 			m_Size = size;
 			glfwSetWindowSize(m_Handle, m_Size.w, m_Size.h);
 		}
@@ -67,7 +65,7 @@ namespace sw {
 			return m_Renderer;
 		}
 
-		void setContent(ctrl::ControlBase* content);
+		void setContent(ControlBase* content);
 
 		void makeContextCurrent() const {
 			glfwMakeContextCurrent(m_Handle);
@@ -77,7 +75,6 @@ namespace sw {
 		bool windowShoudClose() const;
 		void closeWindow();
 		void render();
-		void redraw();
 
 		void c_keyPressed(int key, int scancode, int action, int mods);
 		void c_closeRequested();
@@ -86,7 +83,7 @@ namespace sw {
 		void c_refresh();
 	};
 
-
 }
 
 #include "ctrl/RootControl.h"
+

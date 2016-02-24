@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Point.h"
-#include "Size.h"
+#include "sw/util/Point.h"
+#include "sw/util/Size.h"
 
-namespace sw { namespace util {
+namespace sw { 
 
 	struct Rect {
 		Point p1, p2;
@@ -40,5 +40,5 @@ namespace sw { namespace util {
 		}
 	};
 
-}}
+}
 

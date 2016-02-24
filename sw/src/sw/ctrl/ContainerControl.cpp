@@ -1,10 +1,10 @@
-﻿#include "ContainerControl.h"
+﻿#include "ControlBase.h"
 
-namespace sw { namespace ctrl {
+namespace sw {
 
 
 	ContainerControl::ContainerControl() : ControlBase() {}
 
 	ContainerControl::~ContainerControl() {}
-}}
+}
 

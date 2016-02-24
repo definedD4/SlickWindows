@@ -1,12 +1,11 @@
 #pragma once
 
-#include "sw/Window.h"
-
 #include "sw/util/Point.h"
 #include "sw/util/Rect.h"
 #include "sw/util/Vec2f.h"
 #include "sw/util/Rectf.h"
 #include "sw/util/Color.h"
+#include "sw/Window.h"
 
 namespace sw {
 
@@ -21,10 +20,10 @@ namespace sw {
 		Renderer(Window* target);
 		~Renderer();
 
-		util::Vec2f transform(util::Point point);
-		util::Rectf transform(util::Rect rect);
+		Vec2f transform(Point point);
+		Rectf transform(Rect rect);
 
-		void fillRect(util::Rect rect, util::Color color);
+		void fillRect(const Rect& rect, Color color);
 	};
 
 }

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../Common.h"
-#include "../Application.h"
+#include "sw/Common.h"
+#include "sw/Application.h"
 
-namespace sw { namespace util {
+namespace sw { 
 	
 	class Dimension {
 	private:
@@ -27,4 +27,4 @@ namespace sw { namespace util {
 		}
 	};
 
-} }
+} 

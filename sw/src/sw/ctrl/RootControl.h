@@ -1,42 +1,38 @@
 #pragma once
 
-#include "../Common.h"
-#include "ContainerControl.h"
-#include "../Window.h"
+#include "sw/Common.h"
+
+#include "sw/ctrl/ControlBase.h"
 
 namespace sw {
 
 	class Window;
 	class Renderer;
 
-	namespace ctrl {
+	class RootControl : public virtual ContainerControl {
+	private:
+		Window* m_Owner;
+		ControlBase* m_Content;
 
-		class ContainerControl;
-		class ControlBase;
+	protected:
+		virtual Renderer* getRenderer() const;
 
-		class RootControl : public virtual ContainerControl {
-		private:
-			Window* m_Owner;
-			ControlBase* m_Content;
+	public:
+		RootControl(Window* owner);
+		RootControl(const RootControl& other) = delete;
+		virtual ~RootControl();
 
-		protected:
-			virtual Renderer* getRenderer() const;
+		virtual Size getContainerArea(ControlBase* control);
+		void setContent(ControlBase* content);
 
-		public:
-			RootControl(Window* owner);
-			RootControl(const RootControl& other) = delete;
-			virtual ~RootControl();
+		virtual Point transformToWindowSpace(Point point) const {
+			return point;
+		}
 
-			virtual util::Size getContainerArea(ControlBase* control);
-			void setContent(ControlBase* content);
+		virtual void render();
+		virtual void resize();
+	};
 
-			virtual util::Point transformToWindowSpace(util::Point point) const {
-				return point;
-			}
-
-			virtual void render();
-			virtual void resize();
-		};
-
-	}
 }
+
+#include "sw/Window.h"

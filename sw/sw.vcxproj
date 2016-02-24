@@ -211,9 +211,6 @@
     <ClInclude Include="src\sw\Win32.h" />
     <ClInclude Include="src\sw\Window.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

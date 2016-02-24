@@ -2,7 +2,7 @@
 
 #include <ostream>
 
-namespace sw { namespace util {
+namespace sw { 
 
 	struct Point {
 		int x, y;
@@ -31,18 +31,18 @@ namespace sw { namespace util {
 
 	};
 
-	inline Point operator +(Point& left, Point& right) {
+	inline Point operator +(const Point& left, const Point& right) {
 		return Point(left.x + right.x, left.y + right.y);
 	}
 
-	inline Point operator -(Point& left, Point& right) {
+	inline Point operator -(const Point& left, const Point& right) {
 		return Point(left.x - right.x, left.y - right.y);
 	}
 
-	inline std::ostream& operator << (std::ostream& stream, Point& point) {
+	inline std::ostream& operator << (std::ostream& stream, const Point& point) {
 		stream << "pt{" << point.x << "," << point.y << "}";
 		return stream;
 	}
 
-}}
+}
 

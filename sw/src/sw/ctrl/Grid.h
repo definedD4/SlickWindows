@@ -10,7 +10,7 @@
 #include "LayoutControl.h"
 
 namespace sw {
-	namespace ctrl {
+	
 
 		class ControlBase;
 
@@ -32,7 +32,7 @@ namespace sw {
 			virtual void render();
 			virtual void resize();
 
-			virtual util::Size getContainerArea(ControlBase* control);
+			virtual Size getContainerArea(ControlBase* control);
 
 			void setGrid(const std::vector<int>& columns, const std::vector<int>& rows);
 
@@ -43,4 +43,3 @@ namespace sw {
 		};
 
 	}
-}

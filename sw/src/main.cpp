@@ -12,9 +12,6 @@
 using namespace std;
 
 using namespace sw;
-using namespace util;
-using namespace graph;
-using namespace ctrl;
 
 int main( void )
 {
@@ -40,7 +37,7 @@ int main( void )
 
 	window->setContent(grid);
 
-	window->redraw();
+	window->render();
 
 	APP->run();
 

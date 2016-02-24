@@ -3,11 +3,10 @@
 using namespace std;
 
 using namespace sw;
-using namespace ctrl;
 
 namespace sw {
 
-	Window::Window(util::Size size, std::string title) {
+	Window::Window(Size size, std::string title) {
 		m_Size = size;
 		m_Title = title;
 
@@ -44,10 +43,11 @@ namespace sw {
 		destroyWindow();
 	}
 
-	void Window::setContent(ctrl::ControlBase* content) {
+	void Window::setContent(ControlBase* content) {
 		WARN(!content, "Setting window content to 0.")
 		m_Root = new RootControl(this);
 		m_Root->setContent(content);
+		m_Root->resize();
 	}
 
 	void Window::destroyWindow() {

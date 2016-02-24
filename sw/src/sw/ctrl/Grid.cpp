@@ -1,7 +1,7 @@
 #include "Grid.h"
 
 namespace sw {
-	namespace ctrl {
+	
 
 		const AttachedProperty<int> Grid::RowProperty = AttachedProperty<int>("Row", 0);
 		const AttachedProperty<int> Grid::ColumnProperty = AttachedProperty<int>("Column", 0);
@@ -39,7 +39,7 @@ namespace sw {
 					offset_y += m_RowHeights[i];
 				}
 
-				util::Point pos = util::Point(offset_x, offset_y);
+				Point pos = Point(offset_x, offset_y);
 				setChildPosition(child, pos);
 				child->resize();
 			}
@@ -47,12 +47,12 @@ namespace sw {
 			render();
 		}
 
-		util::Size Grid::getContainerArea(ControlBase* control) {
+		Size Grid::getContainerArea(ControlBase* control) {
 			int row = RowProperty.getValue(
 				static_cast<PropertyContainer*>(control));
 			int col = ColumnProperty.getValue(
 				static_cast<PropertyContainer*>(control));
-			return util::Size(m_ColumnWidths[col], m_RowHeights[row]);
+			return Size(m_ColumnWidths[col], m_RowHeights[row]);
 		}
 
 		void Grid::setGrid(const std::vector<int>& columns, const std::vector<int>& rows) {
@@ -76,7 +76,7 @@ namespace sw {
 			m_ColumnWidths.clear();
 			m_RowHeights.clear();
 
-			util::Size size = getSize();
+			Size size = getSize();
 
 			for (int column : m_Columns) {
 				m_ColumnWidths.push_back(column * size.w / m_ColumnWidthSum);
@@ -91,4 +91,3 @@ namespace sw {
 			addToChildren(child);
 		}
 	}
-}

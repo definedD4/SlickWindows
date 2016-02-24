@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../Common.h"
+#include "sw/Common.h"
 
-namespace sw { namespace util {
+namespace sw { 
 
 	struct Color {
 		byte r, g, b, a;
@@ -28,5 +28,5 @@ namespace sw { namespace util {
 		const Color black = Color(0  , 0  , 0  , 255);
 	}
 
-}}
+}
 

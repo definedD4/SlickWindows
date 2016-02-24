@@ -4,15 +4,14 @@
 
 #include "sw/ctrl/ControlBase.h"
 
-namespace sw { namespace ctrl {
+namespace sw {
 
 	class ContainerControl : public virtual ControlBase {
 	public:
 		ContainerControl();
 		virtual ~ContainerControl();
 
-		virtual util::Size getContainerArea(ControlBase* control) = 0;
+		virtual Size getContainerArea(ControlBase* control) = 0;
 	};
 
-}}
-
+}

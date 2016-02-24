@@ -3,7 +3,7 @@
 #include "LayoutControl.h"
 
 namespace sw {
-	namespace ctrl {
+	
 
 		class Test_Rect : public virtual LayoutControl {
 		public:
@@ -14,15 +14,14 @@ namespace sw {
 
 			}
 
-			Property<util::Color> Fill;
+			Property<Color> Fill;
 
 			virtual void render() {
-				getRenderer()->fillRect(util::Rect(transformToWindowSpace(util::Point()),
-					transformToWindowSpace(util::Point(getSize().w, getSize().h))),
+				getRenderer()->fillRect(Rect(transformToWindowSpace(Point()),
+					transformToWindowSpace(Point(getSize().w, getSize().h))),
 					Fill());
 			}
 
 		};
 
 	}
-}

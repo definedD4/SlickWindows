@@ -2,7 +2,7 @@
 
 #include <ostream>
 
-namespace sw { namespace util {
+namespace sw { 
 
 	struct Size {
 		int w, h;
@@ -32,5 +32,5 @@ namespace sw { namespace util {
 		return stream;
 	}
 
-}}
+}
 

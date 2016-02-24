@@ -4,7 +4,7 @@
 #include  "../util/Thickness.h"
 #include "../util/Dimension.h"
 
-namespace sw { namespace ctrl {
+namespace sw { 
 
 	enum class HorizontalLayout {
 		Left,
@@ -25,14 +25,14 @@ namespace sw { namespace ctrl {
 		LayoutControl();
 		virtual ~LayoutControl();
 
-		Property<util::Dimension> Width;
-		Property<util::Dimension> Height;
-		Property<util::Thickness> Margin;
+		Property<Dimension> Width;
+		Property<Dimension> Height;
+		Property<Thickness> Margin;
 		Property<HorizontalLayout> HorizontalLayout;
 		Property<VerticalLayout> VerticalLayout;
 
 		virtual void resize();
 	};
 
-}}
+}
 
