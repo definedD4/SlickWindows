@@ -7,7 +7,7 @@ namespace sw {
 		const AttachedProperty<int> Grid::ColumnProperty = AttachedProperty<int>("Column", 0);
 
 		Grid::Grid() :
-			ContentListControl(), ControlBase() {
+			LayoutControl(), ControlBase() {
 		}
 
 
@@ -21,7 +21,7 @@ namespace sw {
 		}
 
 		void Grid::resize() {
-			LayoutControl::resize();
+			LayoutControl_::resize();
 
 			recalculateGrid();
 
@@ -88,6 +88,6 @@ namespace sw {
 		}
 
 		void Grid::addChild(ControlBase* child) {
-			addToChildren(child);
+			addChild(child);
 		}
 	}

@@ -2,9 +2,5 @@
 
 namespace sw {
 
-
-	ContainerControl::ContainerControl() : ControlBase() {}
-
-	ContainerControl::~ContainerControl() {}
 }
 

@@ -9,7 +9,7 @@ namespace sw {
 	class Window;
 	class Renderer;
 
-	class RootControl : public virtual ContainerControl {
+	class RootControl : public virtual ControlParrent {
 	private:
 		Window* m_Owner;
 		ControlBase* m_Content;

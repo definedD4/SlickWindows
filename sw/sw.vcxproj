@@ -184,6 +184,7 @@
     <ClInclude Include="src\sw\ctrl\Grid.h" />
     <ClInclude Include="src\sw\AttachedPropertyBase.h" />
     <ClInclude Include="src\sw\AttachedProperty.h" />
+    <ClInclude Include="src\sw\ctrl\Misc.h" />
     <ClInclude Include="src\sw\PropertyContainer.h" />
     <ClInclude Include="src\sw\ctrl\ContainerControl.h" />
     <ClInclude Include="src\sw\ctrl\ContentListControl.h" />

@@ -4,26 +4,11 @@
 #include  "../util/Thickness.h"
 #include "../util/Dimension.h"
 
-namespace sw { 
 
-	enum class HorizontalLayout {
-		Left,
-		Right,
-		Center,
-		Stretch
-	};
-
-	enum class VerticalLayout {
-		Up,
-		Down,
-		Center,
-		Stretch
-	};
-
-	class LayoutControl : public virtual ControlBase {
+	class LayoutControl_ : public virtual ControlBase {
 	public:
-		LayoutControl();
-		virtual ~LayoutControl();
+		LayoutControl_();
+		virtual ~LayoutControl_();
 
 		Property<Dimension> Width;
 		Property<Dimension> Height;

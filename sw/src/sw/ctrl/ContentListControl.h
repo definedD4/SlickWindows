@@ -3,12 +3,14 @@
 #include <vector>
 
 #include "ControlBase.h"
+#include "ControlParrent.h"
 
 namespace sw {
 
 	class ControlBase;
 
-	class ContentListControl : virtual public ContainerControl {
+	class LayoutControl : virtual public ControlBase,
+							   virtual public ControlParrent {
 	private:
 		std::vector<ControlBase*> m_Children;
 
@@ -17,8 +19,8 @@ namespace sw {
 			return m_Children;
 		}
 
-		void addToChildren(ControlBase* child) {
-			child->setParrent(static_cast<ContainerControl*>(this));
+		void addChild(ControlBase* child) {
+			child->setParrent(static_cast<ControlParrent*>(this));
 			m_Children.push_back(child);
 		}
 
@@ -27,8 +29,8 @@ namespace sw {
 		}
 
 	public:
-		ContentListControl();
-		virtual ~ContentListControl();
+		LayoutControl();
+		virtual ~LayoutControl();
 	};
 
 }

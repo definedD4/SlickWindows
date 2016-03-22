@@ -15,8 +15,8 @@ namespace sw {
 		class ControlBase;
 
 		class Grid
-			: public virtual ContentListControl,
-			public virtual LayoutControl {
+			: public virtual LayoutControl,
+			public virtual LayoutControl_ {
 		public:
 			static const AttachedProperty<int> RowProperty, ColumnProperty;
 

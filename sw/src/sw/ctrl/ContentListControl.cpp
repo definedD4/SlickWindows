@@ -2,11 +2,11 @@
 
 namespace sw {
 
-		ContentListControl::ContentListControl() 
-			: ContainerControl(), ControlBase() {
+		LayoutControl::LayoutControl() 
+			: ControlParrent(), ControlBase() {
 		}
 
-		ContentListControl::~ContentListControl() {
+		LayoutControl::~LayoutControl() {
 			for (ControlBase* item : m_Children) {
 				delete item;
 			}

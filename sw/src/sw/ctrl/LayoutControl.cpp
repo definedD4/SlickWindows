@@ -2,11 +2,11 @@
 
 namespace sw {
 
-	LayoutControl::LayoutControl() {}
+	LayoutControl_::LayoutControl_() {}
 
-	LayoutControl::~LayoutControl() {}
+	LayoutControl_::~LayoutControl_() {}
 
-	void LayoutControl::resize() {
+	void LayoutControl_::resize() {
 		Size contArea = getParrent()->getContainerArea(this);
 		Size newSize;
 		Point newPosition;

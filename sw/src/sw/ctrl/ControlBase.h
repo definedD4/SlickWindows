@@ -2,25 +2,31 @@
 
 #include "sw/util/Point.h"
 #include "sw/util/Size.h"
+
+#include "sw/Property.h"
+#include "sw/util/Thickness.h"
+#include "sw/util/Dimension.h"
+
+#include "Misc.h"
 #include "sw/PropertyContainer.h"
 
 namespace sw { 
 	
 	class Renderer;
 	
-	class ContainerControl;
+	class ControlParrent;
 
 	class ControlBase : public virtual PropertyContainer {
 	private:
-		ContainerControl* m_Parrent;
+		ControlParrent* m_Parrent;
 
 		Point m_Position;
 		Size m_Size;
 
-		void setParrent(ContainerControl* parrent) { m_Parrent = parrent; }
+		void setParrent(ControlParrent* parrent) { m_Parrent = parrent; }
 
 	protected:
-		ContainerControl* getParrent() const;
+		ControlParrent* getParrent() const;
 
 		void setPosition(Point position) {
 			m_Position = position;
@@ -42,11 +48,16 @@ namespace sw {
 		virtual Point transformToWindowSpace(Point point) const;
 
 		virtual void render() = 0;
-		virtual void resize() = 0;
+		virtual void resize();
 
+		Property<Dimension> Width;
+		Property<Dimension> Height;
+		Property<Thickness> Margin;
+		Property<HorizontalLayout> HorizontalLayout;
+		Property<VerticalLayout> VerticalLayout;
 
 		friend class RootControl;
-		friend class ContentListControl;
+		friend class LayoutControl;
 	};
 
 }

@@ -6,11 +6,7 @@
 
 namespace sw {
 
-	class ContainerControl : public virtual ControlBase {
-	public:
-		ContainerControl();
-		virtual ~ContainerControl();
-
+	class ControlParrent {
 		virtual Size getContainerArea(ControlBase* control) = 0;
 	};
 

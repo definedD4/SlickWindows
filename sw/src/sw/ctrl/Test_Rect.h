@@ -5,9 +5,9 @@
 namespace sw {
 	
 
-		class Test_Rect : public virtual LayoutControl {
+		class Test_Rect : public virtual LayoutControl_ {
 		public:
-			Test_Rect() : LayoutControl() {
+			Test_Rect() : LayoutControl_() {
 
 			}
 			virtual ~Test_Rect() {

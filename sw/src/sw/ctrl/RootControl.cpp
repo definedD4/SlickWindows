@@ -2,7 +2,7 @@
 
 namespace sw {
 
-	RootControl::RootControl(Window* owner) : ContainerControl(), m_Owner(owner) { }
+	RootControl::RootControl(Window* owner) : ControlParrent(), m_Owner(owner) { }
 
 	RootControl::~RootControl() {
 		delete m_Content;
@@ -24,7 +24,7 @@ namespace sw {
 		}
 		ASSERT(content != nullptr)
 		m_Content = content;
-		m_Content->setParrent(static_cast<ContainerControl*>(this));
+		m_Content->setParrent(static_cast<ControlParrent*>(this));
 	}
 
 	void RootControl::render() {

@@ -158,5 +158,8 @@
     <ClInclude Include="src\sw\util\Rectf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\sw\ctrl\Misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
