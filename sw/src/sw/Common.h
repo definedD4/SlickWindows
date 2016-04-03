@@ -11,17 +11,16 @@
 #ifdef _DEBUG
 	#define ASSERT(x) if(!(x)) { __debugbreak(); }
 	#define FATAL(x, y) if(!(x)) { Application::fatalError(y); }
-	#define WARN(x, y) if(x) { LOGGER->logWarning(y); }
-	#define DEBUG_INFO(x) LOGGER->logInfo(x)
+	#define WARN(x, y) if(x) { Logger::current().logWarning(y); }
+	#define DEBUG_INFO(x) Logger::current().logInfo(x)
 #else
 	#define ASSERT(x)
 	#define FATAL(x, y)
 	#define WARN(x, y)
 #endif
 
-#define APP Application::current()
-#define LOGGER Logger::current()
-
 inline void pause() {
 	system("pause");
 }
+
+#include "sw/Logger.h"

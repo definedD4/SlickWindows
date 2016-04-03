@@ -13,7 +13,7 @@ namespace sw {
 
 		Size(int w_, int h_) : w(w_), h(h_) { }
 
-		void operator=(Size& src) {
+		void operator=(const Size& src) {
 			w = src.w;
 			h = src.h;
 		}

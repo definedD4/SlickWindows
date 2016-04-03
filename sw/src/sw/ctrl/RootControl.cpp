@@ -8,14 +8,18 @@ namespace sw {
 		delete m_Content;
 	}
 
-	Renderer* RootControl::getRenderer() const {
-		return m_Owner->getRenderer();
-	}
-
-	Size RootControl::getContainerArea(ControlBase* control) {
+	Size RootControl::getContainerArea(ControlBase* control) const {
 		ASSERT(m_Owner != nullptr)
 		ASSERT(control == m_Content)
 		return m_Owner->getSize();
+	}
+
+	Point RootControl::transformToWindowSpace(Point point, const ControlBase* const control) const {
+		return point;
+	}
+
+	Renderer* RootControl::getRenderer() const {
+		return m_Owner->getRenderer();
 	}
 
 	void RootControl::setContent(ControlBase* content) {
@@ -32,7 +36,6 @@ namespace sw {
 	}
 
 	void RootControl::resize() {
-		setSize(m_Owner->getSize());
 		m_Content->resize();
 	}
 

@@ -2,13 +2,37 @@
 
 namespace sw { 
 
+	///===== Constructors =====///
+
 	ControlBase::ControlBase() : 
 		PropertyContainer() {}
 
 	ControlBase::~ControlBase() {}
 
+	///===== Getters / Setters =====///
+
 	ControlParrent* ControlBase::getParrent() const {
 		return m_Parrent;
+	}
+
+	void ControlBase::setParrent(ControlParrent * parrent) {
+		m_Parrent = parrent;
+	}
+
+	Point ControlBase::getPosition() const {
+		return m_Position; 
+	}
+
+	void ControlBase::setPosition(Point position) {
+		m_Position = position;
+	}
+
+	Size ControlBase::getSize() const {
+		return m_Size; 
+	}
+
+	void ControlBase::setSize(Size size) {
+		m_Size = size;
 	}
 
 	Renderer* ControlBase::getRenderer() const {
@@ -16,7 +40,15 @@ namespace sw {
 	}
 
 	Point ControlBase::transformToWindowSpace(Point point) const {
-		return m_Parrent->transformToWindowSpace(point + m_Position);
+		return m_Parrent->transformToWindowSpace(point + m_Position, this);
+	}
+
+	Point ControlBase::getOrigin() const {
+		return transformToWindowSpace(Point());
+	}
+
+	Size ControlBase::getPrefferedSize() const {
+		return Size(Width().valueOr(0), Height().valueOr(0));
 	}
 
 	void ControlBase::resize() {

@@ -90,6 +90,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)Dependencies/GLFW/include;$(SolutionDir)Dependencies/GLEW/include;$(ProjectDir)src</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -107,6 +108,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)Dependencies/GLFW/include;$(SolutionDir)Dependencies/GLEW/include;$(ProjectDir)src</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -126,6 +128,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)Dependencies/GLFW/include;$(SolutionDir)Dependencies/GLEW/include;$(ProjectDir)src</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -147,6 +150,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)Dependencies/GLFW/include;$(SolutionDir)Dependencies/GLEW/include;$(ProjectDir)src</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -161,12 +165,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\sw\ctrl\Grid.cpp" />
+    <ClCompile Include="src\sw\GLFWWindowHost.cpp" />
     <ClCompile Include="src\sw\PropertyContainer.cpp" />
-    <ClCompile Include="src\sw\ctrl\ContainerControl.cpp" />
-    <ClCompile Include="src\sw\ctrl\ContentListControl.cpp" />
-    <ClCompile Include="src\sw\ctrl\ControlBase.cpp" />
+    <ClCompile Include="src\sw\ctrl\ControlParrent.cpp" />
     <ClCompile Include="src\sw\ctrl\LayoutControl.cpp" />
+    <ClCompile Include="src\sw\ctrl\ControlBase.cpp" />
     <ClCompile Include="src\sw\ctrl\RootControl.cpp" />
     <ClCompile Include="src\sw\Logger.cpp" />
     <ClCompile Include="src\sw\Dispatcher.cpp" />
@@ -181,15 +184,14 @@
     <ClCompile Include="src\sw\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\sw\ctrl\Grid.h" />
     <ClInclude Include="src\sw\AttachedPropertyBase.h" />
     <ClInclude Include="src\sw\AttachedProperty.h" />
     <ClInclude Include="src\sw\ctrl\Misc.h" />
+    <ClInclude Include="src\sw\GLFWWindowHost.h" />
     <ClInclude Include="src\sw\PropertyContainer.h" />
-    <ClInclude Include="src\sw\ctrl\ContainerControl.h" />
-    <ClInclude Include="src\sw\ctrl\ContentListControl.h" />
-    <ClInclude Include="src\sw\ctrl\ControlBase.h" />
+    <ClInclude Include="src\sw\ctrl\ControlParrent.h" />
     <ClInclude Include="src\sw\ctrl\LayoutControl.h" />
+    <ClInclude Include="src\sw\ctrl\ControlBase.h" />
     <ClInclude Include="src\sw\ctrl\RootControl.h" />
     <ClInclude Include="src\sw\ctrl\Test_Rect.h" />
     <ClInclude Include="src\sw\Event.h" />

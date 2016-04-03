@@ -2,13 +2,14 @@
 
 #include "sw/util/Point.h"
 #include "sw/util/Size.h"
-
-#include "sw/Property.h"
 #include "sw/util/Thickness.h"
 #include "sw/util/Dimension.h"
 
-#include "Misc.h"
+#include "sw/Property.h"
 #include "sw/PropertyContainer.h"
+
+#include "sw/ctrl/Misc.h"
+#include "sw/ctrl/ControlParrent.h"
 
 namespace sw { 
 	
@@ -23,29 +24,29 @@ namespace sw {
 		Point m_Position;
 		Size m_Size;
 
-		void setParrent(ControlParrent* parrent) { m_Parrent = parrent; }
-
-	protected:
-		ControlParrent* getParrent() const;
-
-		void setPosition(Point position) {
-			m_Position = position;
-		}
-
-		void setSize(Size size) {
-			m_Size = size;
-		}
-
-		virtual Renderer* getRenderer() const;
 
 	public:
 		ControlBase();
 		virtual ~ControlBase();
 
-		Size getSize() const { return m_Size; }
-		Point getPosition() const { return m_Position; }
+	private:
+		void setParrent(ControlParrent* parrent);
+
+	protected:
+		ControlParrent* getParrent() const;
+
+		void setPosition(Point position);
+
+		void setSize(Size size);
+
+	public:
+		virtual Renderer* getRenderer() const;
+		Size getSize() const;
+		Point getPosition() const;
 
 		virtual Point transformToWindowSpace(Point point) const;
+		Point getOrigin() const;
+		virtual Size getPrefferedSize() const;
 
 		virtual void render() = 0;
 		virtual void resize();
@@ -61,7 +62,3 @@ namespace sw {
 	};
 
 }
-
-#include "sw/ctrl/ContainerControl.h"
-
-#include "sw/Renderer.h"

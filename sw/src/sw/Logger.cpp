@@ -4,7 +4,7 @@ using namespace std;
 
 namespace sw {
 
-	Logger* Logger::s_Instance = nullptr;
+	Logger Logger::s_Instance;
 
 	std::ostream& Logger::streamLog(LogLevel level) {
 		setConsoleTextAttributes(FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
@@ -15,8 +15,6 @@ namespace sw {
 	Logger::Logger() { }
 
 	Logger::~Logger() { }
-
-	void destroyLogger() { delete Logger::s_Instance; }
 
 	void Logger::log(LogLevel level, const std::string& message) {
 		switch(level) {

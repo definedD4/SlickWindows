@@ -48,25 +48,22 @@
     <ClCompile Include="src\sw\ctrl\ControlBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sw\ctrl\ContainerControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sw\ctrl\LayoutControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sw\ctrl\ContentListControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\sw\ctrl\RootControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\sw\PropertyContainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sw\ctrl\Grid.cpp">
+    <ClCompile Include="src\sw\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sw\Renderer.cpp">
+    <ClCompile Include="src\sw\ctrl\LayoutControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sw\ctrl\ControlParrent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sw\GLFWWindowHost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,16 +113,7 @@
     <ClInclude Include="src\sw\ctrl\ControlBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sw\ctrl\ContainerControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\ctrl\LayoutControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\sw\util\Dimension.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\ctrl\ContentListControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sw\ctrl\RootControl.h">
@@ -146,9 +134,6 @@
     <ClInclude Include="src\sw\AttachedPropertyBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sw\ctrl\Grid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\sw\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -159,6 +144,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sw\ctrl\Misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\ctrl\LayoutControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\ctrl\ControlParrent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\GLFWWindowHost.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

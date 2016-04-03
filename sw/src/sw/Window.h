@@ -3,19 +3,15 @@
 #include <iostream>
 #include <string>
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-
 #include "Common.h"
 
 #include "util/Size.h"
 
 #include "sw/Renderer.h"
 
-#include "Application.h"
+#include "sw/GLFWWindowHost.h"
 
 #include "ctrl/RootControl.h"
-#include "ctrl/ControlBase.h"
 
 namespace sw {
 
@@ -24,63 +20,22 @@ namespace sw {
 	class RootControl;
 	class Renderer;
 
-	class Window {
+	class Window : public virtual GLFWWindowHost {
 	private:
-		GLFWwindow* m_Handle;
-
-		Size m_Size;
-		std::string m_Title;
-
 		Renderer* m_Renderer;
 
 		RootControl* m_Root;
 
 	public:
-		Window(Size size, std::string title);
-		~Window();
+		Window(const Size& size, const std::string& title);
+		virtual ~Window();
 
-		GLFWwindow* getHandle() const {
-			return m_Handle;
-		}
-
-		Size getSize() const {
-			return m_Size;
-		}
-
-		void setSize(Size size) {
-			m_Size = size;
-			glfwSetWindowSize(m_Handle, m_Size.w, m_Size.h);
-		}
-
-		std::string getTitle() const {
-			return m_Title;
-		}
-
-		void setTitle(const std::string& title) {
-			m_Title = title;
-			glfwSetWindowTitle(m_Handle, m_Title.c_str());
-		}
-
-		Renderer* getRenderer() const {
-			return m_Renderer;
-		}
+		Renderer* getRenderer() const;
 
 		void setContent(ControlBase* content);
 
-		void makeContextCurrent() const {
-			glfwMakeContextCurrent(m_Handle);
-		}
-
-		void destroyWindow();
-		bool windowShoudClose() const;
-		void closeWindow();
-		void render();
-
-		void c_keyPressed(int key, int scancode, int action, int mods);
-		void c_closeRequested();
-		void c_sizeChanged(int width, int height);
-		void c_positionChanged(int xpos, int ypos);
-		void c_refresh();
+		virtual void onRender() override;
+		virtual void onSizeChanged() override;
 	};
 
 }

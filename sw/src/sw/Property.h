@@ -19,6 +19,8 @@ namespace sw {
 		void operator = (T value) { m_Value = value; }
 		operator T() const { return get(); }
 		T operator()() const { return get(); }
+
+		T operator *() const { return get(); }
 	};
 
 	template<typename T>

@@ -8,8 +8,6 @@
 
 namespace sw {
 
-	void destroyLogger();
-
 	enum class LogLevel {
 		Info,
 		Warning,
@@ -19,12 +17,9 @@ namespace sw {
 
 	class Logger {
 	private:
-		static Logger* s_Instance;
+		static Logger s_Instance;
 	public:
-		static Logger* current() {
-			if (!s_Instance) {
-				s_Instance = new Logger();
-			}
+		static Logger& current() {
 			return s_Instance;
 		}
 
@@ -40,8 +35,6 @@ namespace sw {
 	private:
 		Logger();
 		~Logger();
-
-		friend void destroyLogger();
 	};
 
 }

@@ -1,22 +1,29 @@
 ﻿#pragma once
-#include "ControlBase.h"
-#include "../Property.h"
-#include  "../util/Thickness.h"
-#include "../util/Dimension.h"
 
+#include <vector>
 
-	class LayoutControl_ : public virtual ControlBase {
+#include "sw/ctrl/ControlBase.h"
+#include "sw/ctrl/ControlParrent.h"
+
+namespace sw {
+
+	class ControlBase;
+
+	class LayoutControl : virtual public ControlBase,
+						  virtual public ControlParrent {
+	private:
+		std::vector<ControlBase*> m_Children;
+
+	protected:
+		const std::vector<ControlBase*>& getChildren() const;
+
+		virtual void onChildAdded(ControlBase* child) = 0;
+
 	public:
-		LayoutControl_();
-		virtual ~LayoutControl_();
+		LayoutControl();
+		virtual ~LayoutControl();
 
-		Property<Dimension> Width;
-		Property<Dimension> Height;
-		Property<Thickness> Margin;
-		Property<HorizontalLayout> HorizontalLayout;
-		Property<VerticalLayout> VerticalLayout;
-
-		virtual void resize();
+		void addChild(ControlBase* child);
 	};
 
 }

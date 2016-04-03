@@ -25,6 +25,15 @@ namespace sw {
 			ASSERT(!m_Auto)
 			return m_Value;
 		}
+
+		int valueOr(int def) {
+			if (!isAuto()) {
+				return m_Value;
+			}
+			else {
+				return def;
+			}
+		}
 	};
 
 } 
