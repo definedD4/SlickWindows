@@ -66,6 +66,9 @@
     <ClCompile Include="src\sw\GLFWWindowHost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\sw\ctrl\StackLayout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sw\graph\Bitmap.h">
@@ -153,6 +156,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sw\GLFWWindowHost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\ctrl\StackLayout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

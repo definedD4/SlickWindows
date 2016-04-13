@@ -14,5 +14,17 @@ namespace sw {
 		return min(max(val, min_val), max_val);
 	}
 
+	inline int setIfMax(int& var, int val) {
+		if(var < val) {
+			var = val;
+		}
+		return var;
+	}
+	inline int setIfMin(int& var, int val) {
+		if (var > val) {
+			var = val;
+		}
+		return var;
+	}
 }
 

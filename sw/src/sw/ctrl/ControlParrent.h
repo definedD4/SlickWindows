@@ -11,6 +11,7 @@ namespace sw {
 
 	class ControlParrent {
 	public:
+		virtual ~ControlParrent() = default;
 		virtual Size getContainerArea(ControlBase* control) const = 0;
 		virtual Point transformToWindowSpace(Point point, const ControlBase* const control) const = 0;
 		virtual Renderer* getRenderer() const = 0;

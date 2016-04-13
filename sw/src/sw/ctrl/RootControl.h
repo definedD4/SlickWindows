@@ -3,6 +3,7 @@
 #include "sw/Common.h"
 
 #include "sw/ctrl/ControlParrent.h"
+#include "sw/Window.h"
 
 namespace sw {
 
@@ -20,9 +21,9 @@ namespace sw {
 		RootControl(const RootControl& other) = delete;
 		virtual ~RootControl();
 
-		virtual Size getContainerArea(ControlBase* control) const;
-		virtual Point transformToWindowSpace(Point point, const ControlBase* const control) const;
-		virtual Renderer* getRenderer() const;
+		virtual Size getContainerArea(ControlBase* control) const override;
+		virtual Point transformToWindowSpace(Point point, const ControlBase* const control) const override;
+		virtual Renderer* getRenderer() const override;
 
 		void setContent(ControlBase* content);
 
@@ -32,4 +33,3 @@ namespace sw {
 
 }
 
-#include "sw/Window.h"

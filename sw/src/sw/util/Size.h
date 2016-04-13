@@ -2,7 +2,9 @@
 
 #include <ostream>
 
-namespace sw { 
+#include "sw/util/Thickness.h"
+
+namespace sw {
 
 	struct Size {
 		int w, h;
@@ -30,6 +32,10 @@ namespace sw {
 	inline std::ostream& operator << (std::ostream& stream, Size& size) {
 		stream << "sz{" << size.w << "," << size.h << "}";
 		return stream;
+	}
+
+	inline Size operator +(const Size& size, const Thickness& thickness) {
+		return Size(size.w + thickness.l + thickness.r, size.h + thickness.t + thickness.b);
 	}
 
 }

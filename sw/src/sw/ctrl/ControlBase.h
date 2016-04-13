@@ -46,7 +46,7 @@ namespace sw {
 
 		virtual Point transformToWindowSpace(Point point) const;
 		Point getOrigin() const;
-		virtual Size getPrefferedSize() const;
+		virtual Size getDesiredSize() const;
 
 		virtual void render() = 0;
 		virtual void resize();

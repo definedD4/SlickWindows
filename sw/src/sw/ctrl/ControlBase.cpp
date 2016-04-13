@@ -47,8 +47,8 @@ namespace sw {
 		return transformToWindowSpace(Point());
 	}
 
-	Size ControlBase::getPrefferedSize() const {
-		return Size(Width().valueOr(0), Height().valueOr(0));
+	Size ControlBase::getDesiredSize() const {
+		return Size(Width().valueOr(0), Height().valueOr(0)) + Margin();
 	}
 
 	void ControlBase::resize() {
