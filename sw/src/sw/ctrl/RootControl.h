@@ -22,8 +22,8 @@ namespace sw {
 		virtual ~RootControl();
 
 		virtual Size getContainerArea(ControlBase* control) const override;
-		virtual Point transformToWindowSpace(Point point, const ControlBase* const control) const override;
-		virtual Renderer* getRenderer() const override;
+		//virtual Point transformToWindowSpace(Point point, const ControlBase* const control) const override;
+		virtual Renderer getRenderer(ControlBase* control) const override;
 
 		void setContent(ControlBase* content);
 

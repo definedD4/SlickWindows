@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include <vector>
+#include <map>
 
 #include "sw/ctrl/ControlBase.h"
 #include "sw/ctrl/ControlParrent.h"
@@ -11,17 +11,13 @@ namespace sw {
 
 	class LayoutControl : virtual public ControlBase,
 						  virtual public ControlParrent {
-	protected:
-		struct child_data {
-			ControlBase* childPtr;
-			void* customData;
-		};
-
+	public:
+		typedef std::map<ControlBase*, void*> T_ChildMap;
 	private:
-		std::vector<child_data> m_Children;
+		T_ChildMap m_Children;
 
 	protected:
-		const std::vector<child_data>& getChildren() const;
+		const T_ChildMap& getChildren() const;
 
 		virtual void* onChildAdded(ControlBase* child) = 0;
 
@@ -30,8 +26,6 @@ namespace sw {
 		virtual ~LayoutControl();
 
 		void addChild(ControlBase* child);
-
-		Renderer* getRenderer() const override;
 	};
 
 }

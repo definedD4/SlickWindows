@@ -14,12 +14,14 @@ namespace sw {
 		return m_Owner->getSize();
 	}
 
-	Point RootControl::transformToWindowSpace(Point point, const ControlBase* const control) const {
-		return point;
-	}
-
-	Renderer* RootControl::getRenderer() const {
-		return m_Owner->getRenderer();
+	//Point RootControl::transformToWindowSpace(Point point, const ControlBase* const control) const {
+	//	return point;
+	//}
+	
+	Renderer RootControl::getRenderer(ControlBase* control) const {
+		ASSERT(control == m_Content)
+		ASSERT(m_Owner != nullptr)
+		return Renderer(m_Owner->getRenderTarget());
 	}
 
 	void RootControl::setContent(ControlBase* content) {

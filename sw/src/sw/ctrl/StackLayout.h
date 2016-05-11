@@ -24,10 +24,12 @@ namespace sw {
 
 		virtual void* onChildAdded(ControlBase* child) override;
 		virtual Size getContainerArea(ControlBase* control) const override;
-		virtual Point transformToWindowSpace(Point point, const ControlBase* const control) const override;
+		//virtual Point transformToWindowSpace(Point point, const ControlBase* const control) const override;
+
+
+		virtual Renderer getRenderer(ControlBase* control);
 
 		virtual void resize() override;
-
 		void render() override;
 	};
 

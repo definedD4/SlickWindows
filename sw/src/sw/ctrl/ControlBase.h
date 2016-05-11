@@ -5,8 +5,8 @@
 #include "sw/util/Thickness.h"
 #include "sw/util/Dimension.h"
 
-#include "sw/Property.h"
-#include "sw/PropertyContainer.h"
+#include "sw/fmwk/Property.h"
+#include "sw/fmwk/PropertyContainer.h"
 
 #include "sw/ctrl/Misc.h"
 #include "sw/ctrl/ControlParrent.h"
@@ -39,13 +39,14 @@ namespace sw {
 
 		void setSize(Size size);
 
+		virtual Renderer getDrawRenderer();
+
 	public:
-		virtual Renderer* getRenderer() const;
 		Size getSize() const;
 		Point getPosition() const;
 
-		virtual Point transformToWindowSpace(Point point) const;
-		Point getOrigin() const;
+		//virtual Point transformToWindowSpace(Point point) const;
+		//Point getOrigin() const;
 		virtual Size getDesiredSize() const;
 
 		virtual void render() = 0;

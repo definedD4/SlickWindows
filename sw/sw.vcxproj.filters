@@ -21,12 +21,6 @@
     <ClCompile Include="src\sw\graph\Bitmap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sw\Task.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sw\Dispatcher.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\sw\util\rect.h">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,9 +28,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\sw\Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sw\Property.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\sw\Logger.cpp">
@@ -51,12 +42,6 @@
     <ClCompile Include="src\sw\ctrl\RootControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sw\PropertyContainer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\sw\Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\sw\ctrl\LayoutControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -69,15 +54,27 @@
     <ClCompile Include="src\sw\ctrl\StackLayout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\sw\fmwk\Dispatcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sw\fmwk\Property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sw\fmwk\PropertyContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sw\fmwk\Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sw\graph\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sw\graph\WindowRenderTarget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sw\graph\Bitmap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\Task.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\Dispatcher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sw\util\size.h">
@@ -101,9 +98,6 @@
     <ClInclude Include="src\sw\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sw\Property.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\sw\Logger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -125,21 +119,6 @@
     <ClInclude Include="src\sw\ctrl\Test_Rect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sw\Event.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\PropertyContainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\AttachedProperty.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\AttachedPropertyBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\sw\Renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\sw\util\Vec2f.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -159,6 +138,36 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sw\ctrl\StackLayout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\fmwk\AttachedProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\fmwk\AttachedPropertyBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\fmwk\Dispatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\fmwk\Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\fmwk\Property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\fmwk\PropertyContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\fmwk\Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\graph\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\graph\RenderTarget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sw\graph\WindowRenderTarget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

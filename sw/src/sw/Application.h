@@ -7,7 +7,7 @@
 #include <GLFW/glfw3.h>
 
 #include "sw/GLFWWindowHost.h"
-#include "Dispatcher.h"
+#include "sw/fmwk/Dispatcher.h"
 #include "Logger.h"
 
 namespace sw {

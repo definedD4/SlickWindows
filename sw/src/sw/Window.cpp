@@ -1,5 +1,7 @@
 #include "Window.h"
 
+#include "sw/graph/WindowRenderTarget.h"
+
 using namespace std;
 
 using namespace sw;
@@ -8,17 +10,15 @@ namespace sw {
 
 	Window::Window(const Size& size, const std::string& title) :
 			GLFWWindowHost(size, title) {
-		m_Renderer = new Renderer(this);
 	}
 
 
 	Window::~Window() {
-		delete m_Renderer;
 		delete m_Root;
 	}
 
-	Renderer* Window::getRenderer() const {
-		return m_Renderer;
+	RenderTarget* Window::getRenderTarget() const {
+		return new WindowRenderTarget(this);
 	}
 
 	void Window::setContent(ControlBase* content) {

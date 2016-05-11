@@ -6,7 +6,7 @@
 #include "sw/ctrl/RootControl.h"
 
 #include "sw/ctrl/Test_Rect.h"
-#include "sw/AttachedProperty.h"
+#include "sw/fmwk/AttachedProperty.h"
 #include "sw/ctrl/StackLayout.h"
 
 using namespace std;
@@ -17,7 +17,7 @@ int main( void )
 {
 	Window* window = new Window(Size(640, 520), "My Window");
 
-	StackLayout* sl = new StackLayout();
+	//StackLayout* sl = new StackLayout();
 
 	Test_Rect* rect1 = new Test_Rect();
 	rect1->Fill = Colors::green;
@@ -25,16 +25,16 @@ int main( void )
 	rect1->VerticalLayout = VerticalLayout::Center;
 	rect1->HorizontalLayout = HorizontalLayout::Center;
 
-	sl->addChild(rect1);
+	/*sl->addChild(rect1);
 
 	Test_Rect* rect2 = new Test_Rect();
 	rect2->Fill = Colors::red;
 	rect2->Width = Dimension::fromInt(100);
 	rect2->Height = Dimension::fromInt(250);
 
-	sl->addChild(rect2);
+	sl->addChild(rect2);*/
 
-	window->setContent(sl);
+	window->setContent(rect1);
 
 	Application::current().run();
 	return 0;

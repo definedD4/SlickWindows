@@ -7,7 +7,7 @@
 
 #include "util/Size.h"
 
-#include "sw/Renderer.h"
+#include "sw/graph/RenderTarget.h"
 
 #include "sw/GLFWWindowHost.h"
 
@@ -22,15 +22,13 @@ namespace sw {
 
 	class Window : public virtual GLFWWindowHost {
 	private:
-		Renderer* m_Renderer;
-
 		RootControl* m_Root;
 
 	public:
 		Window(const Size& size, const std::string& title);
 		virtual ~Window();
 
-		Renderer* getRenderer() const;
+		RenderTarget* getRenderTarget() const;
 
 		void setContent(ControlBase* content);
 

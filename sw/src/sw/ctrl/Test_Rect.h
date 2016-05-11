@@ -16,12 +16,12 @@ namespace sw {
 
 			Property<Color> Fill;
 
-			virtual void render() {
-				getRenderer()->setOrigin(getOrigin());
+			virtual void render() override {
+				Renderer renderer = getDrawRenderer();
 
 				Rect fillRect(Point(), Point(getSize().w, getSize().h));
 
-				getRenderer()->fillRect(fillRect, Fill());
+				renderer.fillRect(fillRect, Fill());
 			}
 
 		};

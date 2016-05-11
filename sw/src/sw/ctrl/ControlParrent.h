@@ -13,12 +13,12 @@ namespace sw {
 	public:
 		virtual ~ControlParrent() = default;
 		virtual Size getContainerArea(ControlBase* control) const = 0;
-		virtual Point transformToWindowSpace(Point point, const ControlBase* const control) const = 0;
-		virtual Renderer* getRenderer() const = 0;
+		//virtual Point transformToWindowSpace(Point point, const ControlBase* const control) const = 0;
+		virtual Renderer getRenderer(ControlBase* control) const = 0;
 
 	};
 
 }
 
-#include "sw/Renderer.h"
+#include "sw/graph/Renderer.h"
 #include "sw/ctrl/ControlBase.h"

@@ -166,16 +166,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\sw\GLFWWindowHost.cpp" />
-    <ClCompile Include="src\sw\PropertyContainer.cpp" />
+    <ClCompile Include="src\sw\fmwk\PropertyContainer.cpp" />
     <ClCompile Include="src\sw\ctrl\ControlParrent.cpp" />
     <ClCompile Include="src\sw\ctrl\LayoutControl.cpp" />
     <ClCompile Include="src\sw\ctrl\ControlBase.cpp" />
     <ClCompile Include="src\sw\ctrl\RootControl.cpp" />
     <ClCompile Include="src\sw\Logger.cpp" />
-    <ClCompile Include="src\sw\Dispatcher.cpp" />
-    <ClCompile Include="src\sw\Property.cpp" />
-    <ClCompile Include="src\sw\Renderer.cpp" />
-    <ClCompile Include="src\sw\Task.cpp" />
+    <ClCompile Include="src\sw\fmwk\Dispatcher.cpp" />
+    <ClCompile Include="src\sw\fmwk\Property.cpp" />
+    <ClCompile Include="src\sw\graph\Renderer.cpp" />
+    <ClCompile Include="src\sw\fmwk\Task.cpp" />
     <ClCompile Include="src\sw\Application.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\sw\graph\Bitmap.cpp" />
@@ -183,27 +183,29 @@
     <ClCompile Include="src\sw\Win32.cpp" />
     <ClCompile Include="src\sw\Window.cpp" />
     <ClCompile Include="src\sw\ctrl\StackLayout.cpp" />
+    <ClCompile Include="src\sw\graph\WindowRenderTarget.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\sw\AttachedPropertyBase.h" />
-    <ClInclude Include="src\sw\AttachedProperty.h" />
+    <ClInclude Include="src\sw\fmwk\AttachedPropertyBase.h" />
+    <ClInclude Include="src\sw\fmwk\AttachedProperty.h" />
     <ClInclude Include="src\sw\ctrl\Misc.h" />
     <ClInclude Include="src\sw\GLFWWindowHost.h" />
-    <ClInclude Include="src\sw\PropertyContainer.h" />
+    <ClInclude Include="src\sw\fmwk\PropertyContainer.h" />
     <ClInclude Include="src\sw\ctrl\ControlParrent.h" />
     <ClInclude Include="src\sw\ctrl\LayoutControl.h" />
     <ClInclude Include="src\sw\ctrl\ControlBase.h" />
     <ClInclude Include="src\sw\ctrl\RootControl.h" />
     <ClInclude Include="src\sw\ctrl\Test_Rect.h" />
-    <ClInclude Include="src\sw\Event.h" />
+    <ClInclude Include="src\sw\fmwk\Event.h" />
+    <ClInclude Include="src\sw\graph\RenderTarget.h" />
     <ClInclude Include="src\sw\Logger.h" />
-    <ClInclude Include="src\sw\Dispatcher.h" />
-    <ClInclude Include="src\sw\Property.h" />
-    <ClInclude Include="src\sw\Renderer.h" />
+    <ClInclude Include="src\sw\fmwk\Dispatcher.h" />
+    <ClInclude Include="src\sw\fmwk\Property.h" />
+    <ClInclude Include="src\sw\graph\Renderer.h" />
     <ClInclude Include="src\sw\util\Color.h" />
     <ClInclude Include="src\sw\util\Dimension.h" />
     <ClInclude Include="src\sw\util\Math.h" />
-    <ClInclude Include="src\sw\Task.h" />
+    <ClInclude Include="src\sw\fmwk\Task.h" />
     <ClInclude Include="src\sw\Application.h" />
     <ClInclude Include="src\sw\graph\Bitmap.h" />
     <ClInclude Include="src\sw\util\Rectf.h" />
@@ -215,6 +217,7 @@
     <ClInclude Include="src\sw\Win32.h" />
     <ClInclude Include="src\sw\Window.h" />
     <ClInclude Include="src\sw\ctrl\StackLayout.h" />
+    <ClInclude Include="src\sw\graph\WindowRenderTarget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

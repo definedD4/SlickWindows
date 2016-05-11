@@ -35,17 +35,17 @@ namespace sw {
 		m_Size = size;
 	}
 
-	Renderer* ControlBase::getRenderer() const {
-		return m_Parrent->getRenderer();
+	Renderer ControlBase::getDrawRenderer()  {
+		return m_Parrent->getRenderer(this).createWithOffset(m_Position);
 	}
 
-	Point ControlBase::transformToWindowSpace(Point point) const {
-		return m_Parrent->transformToWindowSpace(point + m_Position, this);
-	}
+	//Point ControlBase::transformToWindowSpace(Point point) const {
+	//	return m_Parrent->transformToWindowSpace(point + m_Position, this);
+	//}
 
-	Point ControlBase::getOrigin() const {
+	/*Point ControlBase::getOrigin() const {
 		return transformToWindowSpace(Point());
-	}
+	}*/
 
 	Size ControlBase::getDesiredSize() const {
 		return Size(Width().valueOr(0), Height().valueOr(0)) + Margin();
